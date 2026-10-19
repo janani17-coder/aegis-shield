@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Aegis Shield — Task 1 Deliverables
 
 ## Files
@@ -13,3 +14,6 @@
 
 ## Important
 These are proposed classifications based on the field descriptions and sample values in the supplied worksheet. Review them against the assessment's policy and the data owner's requirements before final submission. Do not publish the private repository or the workbook publicly.
+=======
+# aegis-shield
+>>>>>>> e734f2c (Initial commit)
