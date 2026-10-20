@@ -1,0 +1,5 @@
+sensitivity_level,column_count
+Public,0
+Internal,60
+Confidential,74
+Restricted,35
