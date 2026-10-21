@@ -1,19 +1,19 @@
-<<<<<<< HEAD
 # Aegis Shield — Task 1 Deliverables
 
 ## Files
-- `Aegis_Data_Classification_Completed.xlsx`: completed worksheet with proposed classification fields.
-- `Data_Classification_Rationale.md`: scope, summary counts, 20 difficult decisions, references, and review notes.
-- `Classification_Summary.csv`: sensitivity counts.
-- `Classification_Summary_Chart.png`: bar chart of counts.
 
-## Suggested repository placement
-- Put the completed workbook and rationale in `docs/`.
-- Put the summary chart and a screenshot of a small section of the completed workbook in `evidence/`.
-- Keep the source workbook unchanged as a reference copy if your assessment rules require it.
+- `docs/Aegis_Data_Classification_Completed.xlsx` — completed data classification worksheet.
+- `docs/Data_Classification_Rationale.md` — classification scope, summary, difficult decisions, references, and review notes.
+- `docs/Classification_Summary.csv` — sensitivity-level counts.
+- `evidence/Classification_Summary_Chart.png` — bar chart of classification counts.
+- `evidence/worksheet_screenshot.png.png` — screenshot of the completed worksheet.
+
+## Task 2: STRIDE Threat Model
+
+- `docs/threat_model_template_completed.md` — Aura Workforce data-flow diagram, trust boundaries, STRIDE threat table, and top 10 risk register.
+- `evidence/stride_data_flow_diagram.png` — data-flow diagram screenshot.
+- `evidence/stride_table_rows_01_10.png` — screenshot of the first 10 STRIDE rows.
 
 ## Important
-These are proposed classifications based on the field descriptions and sample values in the supplied worksheet. Review them against the assessment's policy and the data owner's requirements before final submission. Do not publish the private repository or the workbook publicly.
-=======
-# aegis-shield
->>>>>>> e734f2c (Initial commit)
+
+These classifications and threats are proposed based on the supplied assessment materials. Review them against the assessment requirements and data owner's policies before final submission. Keep sensitive assessment materials private and do not publish them publicly unless explicitly permitted.
