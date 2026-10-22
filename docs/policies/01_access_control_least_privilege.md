@@ -6,34 +6,44 @@
 
 ## 1. Purpose
 
-To ensure that employees and systems can access only the information and functions required for their work.
+This policy ensures that employees and other approved users can access only the information and systems they need to do their work. Limiting access helps protect sensitive information and prevents unauthorized changes.
 
 ## 2. Scope
 
-This policy applies to all Aura Workforce users, administrators, applications, service accounts, and systems that access employee, HR, or payroll data.
+This policy applies to all employees, contractors, administrators, and service accounts that access the organization's systems or information. It covers access to applications, databases, files, and other company resources.
 
 ## 3. Rules
 
-1. All users must sign in with an individually assigned account. Shared user accounts are prohibited unless formally approved for a documented technical need.
-2. Access to employee and payroll records must be checked on the server for every request. Users must not access another employee's records without authorization.
-3. Access permissions must follow least privilege. Users may receive only the permissions needed for their assigned duties.
-4. Administrator accounts must use multi-factor authentication (MFA).
-5. HR and payroll permissions must be separated according to job responsibilities. Users must not approve their own sensitive payroll changes.
-6. Managers or designated data owners must review privileged and payroll access at least every three months.
-7. Access must be removed or updated within one business day after an employee leaves or changes roles, once the change is confirmed by HR.
-8. Service accounts must have a documented owner and purpose. They must not use shared human-user credentials or unnecessary administrator privileges.
-9. Access grants, permission changes, and removals must be recorded in an audit log.
+1. Every user must have their own account. Sharing accounts is not allowed unless a documented technical need is formally approved.
+
+2. The system must check each request to access employee or payroll records. Users may access another employee's records only when they have permission to do so.
+
+3. Users must receive only the access permissions they need to perform their assigned work. They must not receive extra permissions without a valid, approved reason.
+
+4. Administrator accounts must use multi-factor authentication (MFA), which means confirming identity using an additional verification step beyond a password.
+
+5. HR and payroll access must be assigned according to each person's job responsibilities. Users must not approve their own sensitive payroll changes.
+
+6. Managers or assigned data owners must review administrator access and payroll permissions at least once every three months.
+
+7. When HR confirms that an employee has left the organization or changed roles, their access must be removed or updated within one business day.
+
+8. Every service account (an account used by an application or system rather than a person) must have a documented owner and purpose. It must not use a human user's shared login details or have unnecessary administrator permissions.
+
+9. All access approvals, permission changes, and access removals must be recorded in a log so they can be reviewed later.
 
 ## 4. Roles
 
-- **Security Team:** Defines access-control requirements and reviews violations.
-- **Managers and data owners:** Approve access according to job responsibilities.
-- **IT administrators:** Implement approved permissions and remove outdated access.
-- **Users:** Protect their accounts and report unexpected access.
+- **Employees and contractors:** Use only the accounts and information they are approved to access. Never share account credentials.
+- **Managers:** Approve access based on job responsibilities and review access when required.
+- **HR:** Confirm employee departures and role changes promptly so access can be updated.
+- **IT and Security teams:** Create, change, and remove access permissions; protect administrator accounts; and maintain access logs.
+- **Data owners:** Confirm who needs access to sensitive information and review permissions at least every three months.
+- **System owners:** Ensure application and service accounts have a documented purpose, an assigned owner, and only the permissions they need.
 
 ## 5. Exceptions
 
-Exceptions require written approval from the system owner and Security Team, a documented reason, compensating controls, and an expiry date. Exceptions must be reviewed before renewal.
+Any request to make an exception to this policy must be documented and approved by the designated manager and IT/Security team before the exception is applied. The request must explain why the exception is needed, what risks it creates, and how those risks will be reduced. Exceptions must have an expiry or review date. Users must contact their manager or IT/Security team if they cannot follow a rule; they must not bypass the rule on their own.
 
 ## 6. Review Date
 
