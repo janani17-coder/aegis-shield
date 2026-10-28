@@ -50,8 +50,10 @@ Choose a reviewed, explicit release tag or image digest, document the selected v
 
 ## STRIDE Threat Mapping
 
-- **Threat ID:** T-08
-- **Rationale:** T-08 concerns users gaining HR/payroll permissions beyond their role. That is not a direct match for this finding. The STRIDE model should be reviewed for a more specific threat involving untrusted or vulnerable components; if none exists, record that no direct mapping was identified rather than forcing a match.
+- **Threat ID:** No direct mapping identified.
+- **Mapping type:** No direct match.
+- **Rationale:** T-08 concerns users gaining HR/payroll permissions beyond their assigned roles. That threat is not directly related to container image version selection. Although T-30 covers service dependencies, the current test did not establish a compromised dependency or dependency failure. No direct threat in the payroll-focused STRIDE model was demonstrated by this observation.
+- **Limitation:** The mutable image tag is a reproducibility and supply-chain management concern; it does not prove that the image is vulnerable or compromised.
 
 ## Limitations
 

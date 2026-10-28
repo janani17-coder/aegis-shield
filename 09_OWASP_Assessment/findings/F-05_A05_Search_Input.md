@@ -51,13 +51,7 @@ Perform authorized, controlled injection testing within the local lab. Review se
 
 ## STRIDE Threat Mapping
 
-- **Threat ID:** T-09
-- **Rationale:** T-09 concerns payroll inputs being changed before calculation. Injection could be relevant to unauthorized input manipulation, but this search test did not demonstrate a connection to payroll processing or confirm T-09.
-
-## Limitations
-
-Only two simple search inputs were tested. No deeper injection testing, request inspection, or database behavior analysis was performed.
-
-## Final Assessment
-
-**Informational observation.** The search feature returned normal no-results responses for the tested inputs. Injection resistance remains unverified.
+- **Threat ID:** No direct mapping identified.
+- **Mapping type:** No direct match.
+- **Rationale:** T-09 concerns payroll inputs being changed between approval and calculation. This search test did not involve payroll processing and did not demonstrate unauthorized input manipulation. No direct threat in the payroll-focused STRIDE model was established by the observed behavior.
+- **Limitation:** The basic

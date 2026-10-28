@@ -50,8 +50,10 @@ Review authorization requirements and business rules for basket changes, checkou
 
 ## STRIDE Threat Mapping
 
-- **Threat ID:** T-11
-- **Rationale:** T-11 concerns payroll calculations or results being altered. The basket test did not involve payroll calculations, so this is not a direct match. Use the mapping only as a broad integrity-related reference, not as evidence of T-11.
+- **Threat ID:** No direct mapping identified.
+- **Mapping type:** No direct match.
+- **Rationale:** T-11 concerns changes to calculated payroll amounts before they are stored. The normal shopping basket test did not involve payroll calculations or demonstrate an integrity failure. The current evidence does not support assigning a direct threat from the payroll-focused STRIDE model.
+- **Limitation:** This report records a normal workflow only. It does not establish that authorization controls or business rules are secure or insecure.
 
 ## Limitations
 

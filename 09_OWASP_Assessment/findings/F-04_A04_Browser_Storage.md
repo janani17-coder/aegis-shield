@@ -51,8 +51,10 @@ Review the application's data flows and storage requirements. Verify transport e
 
 ## STRIDE Threat Mapping
 
-- **Threat ID:** T-19
-- **Rationale:** T-19 concerns restricted data being sent to an AI service or exposed in logs. The Local Storage inspection did not test that data flow, so this is a contextual relationship rather than evidence of T-19.
+- **Threat ID:** No direct mapping identified.
+- **Mapping type:** No direct match.
+- **Rationale:** T-19 concerns restricted data being sent to an AI service or exposed in logs. This Local Storage inspection did not test that data flow. The observation also did not demonstrate a cryptographic weakness, so assigning a specific payroll threat would not be justified.
+- **Limitation:** This report records only a limited visual inspection; it does not establish that the application's cryptographic controls are secure or insecure.
 
 ## Limitations
 

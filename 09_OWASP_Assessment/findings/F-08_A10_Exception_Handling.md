@@ -8,7 +8,7 @@
 - **Target:** `http://127.0.0.1:3000`
 - **OWASP Category:** A10 — Mishandling of Exceptional Conditions
 - **Severity:** Informational
-- **Status:** Limited input-handling check completed
+- **Status:** Limited input-handling check completed; no vulnerability confirmed
 
 ## Summary
 
@@ -34,30 +34,31 @@ The application should handle ordinary and invalid inputs safely, returning an a
 
 ## Actual Result
 
-The application displayed: “No results found. Try adjusting your search to find what you're looking for.” No visible error or application failure was observed.
+The application displayed a standard no-results message: "No results found. Try adjusting your search to find what you're looking for."
+
+No visible error or application failure was observed during this limited check.
 
 ## Evidence
 
-- Evidence source: Manual browser observation.
-- Screenshot: Not captured for this check.
+- **Evidence source:** Manual browser observation.
+- **Screenshot:** Not captured for this check.
+- **Evidence limitation:** Only one moderately long, harmless input was tested. Boundary conditions, exception handling, server logs, and broader error responses were not assessed.
 
 ## Impact
 
-No exceptional-condition handling vulnerability was confirmed by this test.
-
-## Recommendation
-
-Continue testing reasonable input boundaries and invalid application states in the local lab. Confirm that unexpected conditions are handled safely and do not expose sensitive information.
+No exception-handling vulnerability was confirmed. This observation only shows that the application handled the specific input normally; it does not establish that all exceptional conditions are handled securely
 
 ## STRIDE Threat Mapping
 
-- **Threat ID:** T-11
-- **Rationale:** T-11 concerns payroll calculations or results being altered. This search input check did not test payroll calculations, so the mapping is not direct. Record this limitation rather than treating the observation as evidence of T-11.
+- **Threat ID:** No direct mapping identified.
+- **Mapping type:** No direct match for the observed test.
+- **Rationale:** The test assessed the visible response to a moderately long search input. The payroll-specific STRIDE threats in the Aura Workforce model do not directly describe this particular observation.
+- **Limitation:** No payroll-specific threat was demonstrated. A broader assessment would be required to establish any relationship to other threats.
 
-## Limitations
+## Recommendation
 
-Only one moderately long search input was tested. Input length limits, server-side exception handling, and other exceptional conditions were not assessed.
+Extend testing within the authorized local lab to cover appropriate input boundaries and error conditions. Observe whether unexpected inputs produce safe responses, and review relevant application logs where available. Capture screenshots and record the exact test inputs and results for reproducibility.
 
-## Final Assessment
+## Conclusion
 
-**Informational observation.** The search handled the tested input normally. No A10 vulnerability was confirmed by this check.
+The application returned a normal no-results message for the input tested. This limited observation did not confirm a vulnerability and is not sufficient to establish the application's overall exception-handling security.

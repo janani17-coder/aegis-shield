@@ -12,7 +12,7 @@
 
 ## Summary
 
-A manual request to a nonexistent local application URL displayed a normal page. No detailed technical error was observed during this check.
+A manual request to a nonexistent local application URL displayed a normal page. No detailed technical error was observed during this check. This result alone does not establish whether error handling or security configuration is correct.
 
 ## Scope and Preconditions
 
@@ -40,12 +40,15 @@ A normal page was displayed. The HTTP status code, response headers, and server-
 
 ## Impact
 
-No security misconfiguration was confirmed by this check. Other configuration issues may still exist.
+No security misconfiguration was confirmed by this check. Additional configuration and error-handling tests are needed before drawing a broader conclusion.
 
 ## Recommendation
 
-Review security headers, production error handling, exposed application information, and deployment settings as separate checks.
+Review security headers, production error handling, exposed application information, and deployment settings as separate checks. Inspect the HTTP status code and response headers during follow-up testing.
 
 ## STRIDE Threat Mapping
 
-- **Threat ID
+- **Threat ID:** No direct mapping identified.
+- **Mapping type:** No direct match.
+- **Rationale:** The payroll-focused STRIDE model does not contain a specific threat directly demonstrated by this invalid-URL observation. T-30 covers dependency failures and diagnostic-log exposure, but neither was tested here. Assigning T-30 would imply a connection that the current evidence does not establish.
+- **Limitation:** This observation does not confirm a vulnerability or demonstrate that the application's error handling is insecure.
