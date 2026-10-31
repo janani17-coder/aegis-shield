@@ -13,3 +13,19 @@ services:
     ports:
       - "127.0.0.1:8081:80"
     restart: unless-stopped
+
+  zap:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    container_name: aegis-zap
+    profiles:
+      - scan
+    depends_on:
+      - juice-shop
+    command:
+      - zap-baseline.py
+      - -t
+      - http://juice-shop:3000
+      - -r
+      - task10-zap-report.html
+    volumes:
+      - ./zap-reports:/zap/wrk:rw
