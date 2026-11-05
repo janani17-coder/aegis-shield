@@ -1,0 +1,7 @@
+Total chained events: 2653
+Original chain verification: True
+Original result: All events passed verification
+Tampered chain verification: False
+Tamper detection result: Hash mismatch at event 1
+Original CSV modified: No
+Synthetic event added: Yes
