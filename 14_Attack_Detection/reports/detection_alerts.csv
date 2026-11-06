@@ -1,0 +1,13 @@
+timestamp,rule,severity,entity,details,first_check
+2026-09-14 02:10:00+00:00,AUTH-01 Account brute force,High,sanjay.kumar@znova-demo.example,180 failed logins in 10 minutes,"Check account owner, source IPs, successful logins and MFA."
+2026-09-14 02:20:00+00:00,AUTH-01 Account brute force,High,sanjay.kumar@znova-demo.example,200 failed logins in 10 minutes,"Check account owner, source IPs, successful logins and MFA."
+2026-09-14 02:30:00+00:00,AUTH-01 Account brute force,High,sanjay.kumar@znova-demo.example,40 failed logins in 10 minutes,"Check account owner, source IPs, successful logins and MFA."
+2026-09-17 23:00:00+00:00,PAY-01 Night salary access,High,kiran.krishnan@znova-demo.example,150 distinct salary records viewed in one hour,"Check job role, approved task, access reason and export activity."
+2026-09-19 03:40:00+00:00,AUTH-02 Password spraying,High,45.155.205.9,30 distinct accounts targeted in 10 minutes,"Check targeted accounts, source reputation and any later successes."
+2026-09-19 03:50:00+00:00,AUTH-02 Password spraying,High,45.155.205.9,30 distinct accounts targeted in 10 minutes,"Check targeted accounts, source reputation and any later successes."
+2026-09-20 22:32:00+00:00,WEB-01 Script injection indicator,High,198.51.100.77,GET /search?q=<script>alert(1)</script> returned HTTP 200,"Check request context, response, related requests and application logs."
+2026-09-20 22:33:00+00:00,WEB-01 Path traversal indicator,High,198.51.100.90,GET /static/../../../etc/passwd returned HTTP 404,"Check request context, response, related requests and application logs."
+2026-09-20 22:34:00+00:00,WEB-01 Scanning indicator,High,198.51.100.90,GET /admin/.env returned HTTP 404,"Check request context, response, related requests and application logs."
+2026-09-23 11:19:00+00:00,AUTH-03 Rapid country change,High,hemant.mathew@znova-demo.example,IN to RU in 14.0 minutes,"Check VPN use, travel confirmation, device and session details."
+2026-09-24 02:10:00+00:00,PAY-02 Full payroll export,High,varsha.jadhav@znova-demo.example,Full payroll export result: OK,"Verify approval, business purpose, recipient and data-transfer record."
+2026-09-27 16:02:00+00:00,PAY-03 Salary change approval review,Medium,siddharth.sharma@znova-demo.example,Salary change for EMP-0697; approval not verifiable from source CSV,Check the authoritative approval workflow and change ticket.
