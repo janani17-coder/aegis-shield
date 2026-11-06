@@ -1,5 +1,5 @@
-
-# Aegis Shield – Task 14: Attack Detection Rules
+@'
+# Aegis Shield - Task 14: Advanced Attack Detection Rules
 
 ## 1. Authentication Monitoring
 
@@ -7,14 +7,14 @@
 - Severity: High
 - Threshold: 5 or more failed logins for one account within 10 minutes.
 - Purpose: Identify repeated authentication failures against one account.
-- First check: Check account owner, source IPs, successful logins and MFA.
-- False-positive handling: Confirm whether the user had a legitimate password or account issue before escalation.
+- First check: Review account owner, source IPs, timestamps and subsequent successful logins.
+- False-positive handling: Confirm legitimate password issues, account recovery or user activity before escalation.
 
 ### AUTH-02: Password Spraying
 - Severity: High
 - Threshold: 5 or more distinct accounts receiving failed logins from one IP within 10 minutes.
-- Purpose: Identify a possible password-spraying pattern.
-- First check: Review source IP, affected accounts, timestamps and any subsequent successful logins.
+- Purpose: Identify possible password-spraying activity.
+- First check: Review source IP, affected accounts, timestamps and subsequent successful logins.
 - False-positive handling: Compare the source with approved corporate gateways and identity-provider logs.
 
 ### AUTH-03: Rapid Country Change
@@ -26,19 +26,22 @@
 
 ### AUTH-04: Admin Login at Odd Hours
 - Severity: High
-- Status: Not active.
-- Reason: Authentication data does not contain a role or administrator field.
-- Required data: Verified administrator roster, source IP and login timestamps.
-- First check: Confirm administrator identity, approved maintenance window and change ticket.
+- Status: Active for the assessment.
+- Detection method: Successful off-hours logins for the administrator account explicitly mapped in the assessment dataset.
+- Purpose: Identify unexpected privileged account activity outside normal hours.
+- First check: Verify administrator identity, approved schedule, source host, change record and authentication evidence.
+- Limitation: The authentication CSV has no administrator role field. The current implementation uses an assessment-specific account mapping, not general administrator-role discovery.
+- Production requirement: Integrate an authoritative administrator roster or identity-provider role source.
 
 ## 2. Payroll Monitoring
 
 ### PAY-01: Night-Time Salary Access
 - Severity: High
-- Threshold: 10 or more distinct employee salary records viewed by one actor within one hour during 22:00–05:59.
+- Threshold: 10 or more distinct employee salary records viewed by one actor within one hour during the configured 22:00-05:59 window.
 - Purpose: Identify unusually large salary-data access outside normal hours.
 - First check: Confirm actor's job responsibility, access approval, affected records and business reason.
 - False-positive handling: Check approved payroll processing and reporting schedules.
+- Limitation: Confirm the source timezone before applying this rule in production.
 
 ### PAY-02: Full Payroll Export
 - Severity: High
@@ -52,7 +55,7 @@
 - Threshold: Any salary update event.
 - Purpose: Identify salary changes requiring approval verification.
 - First check: Check the approved salary-change request, manager authorization and audit history.
-- Limitation: The supplied payroll data has no approval-reference field. Therefore, missing approval cannot be conclusively established.
+- Limitation: The supplied payroll CSV does not contain an independent approval reference or second-person approval record. The planted assessment event contains the result value `OK_NO_APPROVAL`, which is a review indicator but does not replace independent workflow verification.
 - False-positive handling: Match the event with an independently maintained approval record.
 
 ## 3. Web Request Monitoring
@@ -64,18 +67,28 @@
   - Script injection-like request patterns.
   - Path traversal indicators.
   - Recognized scanning-tool indicators.
-- Purpose: Identify suspicious requests for investigation.
+- Purpose: Identify suspicious web requests for investigation.
 - First check: Review source IP, timestamp, request path, user-agent, response status and application logs.
-- False-positive handling: Validate the request against legitimate testing, monitoring and application behavior.
+- False-positive handling: Validate the request against authorized testing, monitoring and normal application behavior.
 - Important: An indicator is not proof that an application was successfully exploited.
+- Overlap note: A request containing a recognized scanning-tool user-agent may generate both a scanning indicator and another web indicator.
+
+### WEB-02: Web Login Brute Force
+- Severity: High
+- Threshold: 50 or more failed POST requests to the login endpoint from one IP within 10 minutes.
+- Purpose: Identify repeated failed web authentication attempts.
+- First check: Review source IP, affected accounts, application logs, timestamps and authentication outcomes.
+- False-positive handling: Check legitimate client retries, application errors and approved testing activity.
+- Tuning note: The threshold is based on the supplied assessment data and must be validated against normal application traffic before production use.
 
 ## 4. Threshold Tuning and Exceptions
 
-- Review alert frequency against the normal event baseline.
+- Review alert frequency against a normal activity baseline.
 - Avoid treating every failed login as an attack.
-- Retain high-confidence alerts for repeated failures, rapid country changes and full payroll exports.
+- Retain high-priority alerts for repeated failures, rapid country changes and full payroll exports.
 - Reassess thresholds when normal activity changes.
-- Record all threshold changes and their justification.
+- Record threshold changes and their justification.
+- Correlate alerts with identity-provider, application and audit records where available.
 
 ### Friday 02:00 Administrator Backup Exception
 
@@ -94,11 +107,14 @@ Continue alerting if the source changes, the job is missing or fails, or unrelat
 
 ## 5. Data Limitations
 
-- Authentication data has no administrator role field.
-- Payroll data has no approval-reference field.
+- Authentication data has no administrator role field. AUTH-04 currently uses an assessment-specific account mapping.
+- Authentication data has no dedicated MFA field. MFA status requires independent verification.
+- Payroll data has no independent approval-reference field.
 - Payroll data has no source IP field.
-- Geographic login changes require investigation and do not independently prove account compromise.
-- Detection thresholds require validation against the supplied baseline and planted test cases.
+- Authentication and payroll timestamps do not contain timezone offsets. Confirm timezone interpretation before production correlation.
+- Geographic login changes and suspicious web request indicators require investigation.
+- Scanning indicators can overlap with other web indicators when the same request contains a recognized scanning-tool user-agent.
+- Detection thresholds require validation against normal activity before production deployment.
 
 ## 6. Detection Summary
 
@@ -107,8 +123,19 @@ Continue alerting if the source changes, the job is missing or fails, or unrelat
 | AUTH-01 | Account brute force |
 | AUTH-02 | Password spraying |
 | AUTH-03 | Rapid country change |
-| AUTH-04 | Admin odd-hours login – inactive |
+| AUTH-04 | Assessment-mapped administrator off-hours login |
 | PAY-01 | Night salary access |
 | PAY-02 | Full payroll export |
-| PAY-03 | Salary approval review |
-| WEB-01 | Suspicious web request indicators |
+| PAY-03 | Salary change approval review |
+| WEB-01 | SQL injection, script injection, path traversal and scanning indicators |
+| WEB-02 | Web login brute force |
+
+## 7. Assessment Results
+
+The current detection run generated 21 alert rows across the nine detection rules.
+
+Alert rows are not equivalent to unique attack scenarios. Multiple alerts can represent different time windows or overlapping indicators for the same scenario.
+
+The planted-scenario validation is documented separately in:
+`reports/Task_14_Attack_Detection_Report.md`
+'@ | Set-Content -Path "14_Attack_Detection\rules\Detection_Rules.md" -Encoding utf8

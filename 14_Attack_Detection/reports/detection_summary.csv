@@ -2,9 +2,12 @@ rule,severity,alert_count
 AUTH-01 Account brute force,High,3
 AUTH-02 Password spraying,High,2
 AUTH-03 Rapid country change,High,1
+AUTH-04 Admin off-hours login,High,4
 PAY-01 Night salary access,High,1
 PAY-02 Full payroll export,High,1
 PAY-03 Salary change approval review,Medium,1
 WEB-01 Path traversal indicator,High,1
-WEB-01 Scanning indicator,High,1
+WEB-01 SQL injection indicator,High,2
+WEB-01 Scanning indicator,High,3
 WEB-01 Script injection indicator,High,1
+WEB-02 Web login brute force,High,1

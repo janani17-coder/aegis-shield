@@ -92,28 +92,41 @@ for user, group in success.groupby("username"):
 # Rule 4: Admin login at unusual hours.
 # Do not infer administrator status from username.
 # Activate only if an explicit role field is available.
-if "role" in auth.columns:
-    admin = auth[auth["role"].astype(str).str.upper().eq("ADMIN")]
-    odd = admin[
-        admin["timestamp"].dt.hour.isin([0, 1, 2, 3, 4, 5, 22, 23])
-        & admin["event"].str.contains("SUCCESS", case=False, na=False)
-    ]
+# Rule 4: Assessment-specific administrator off-hours detection.
+# In production, use an authoritative administrator-role source.
+assessment_admins = {
+    "vijay.ramesh@znova-demo.example"
+}
 
-    for _, row in odd.iterrows():
-        add_alert(
-            "AUTH-04 Admin off-hours login",
-            row["timestamp"],
-            "Medium",
-            row["username"],
-            f"Successful administrator login at {row['timestamp'].strftime('%H:%M')}",
-            "Check approved schedule, backup jobs, source IP and MFA."
-        )
+admin = auth[
+    auth["username"].isin(assessment_admins)
+]
 
+odd = admin[
+    admin["timestamp"].dt.hour.isin([0, 1, 2, 3, 4, 5, 22, 23])
+    & admin["event"].str.contains("SUCCESS", case=False, na=False)
+]
 
+for _, row in odd.iterrows():
+    add_alert(
+        "AUTH-04 Admin off-hours login",
+        row["timestamp"],
+        "High",
+        row["username"],
+        f"Successful assessment-mapped administrator login at "
+        f"{row['timestamp'].strftime('%H:%M')} from {row['source_ip']}; "
+        f"auth method: {row['auth_method']}",
+        "Verify administrator identity, approved schedule, backup job, "
+        "source IP and MFA evidence."
+    )
+
+# Rule 5: High-volume salary viewing at night.
 # ---------------- PAYROLL ----------------
 
 payroll = pd.read_csv(DATA / "payroll_audit_events.csv")
-payroll["timestamp"] = pd.to_datetime(payroll["timestamp"], errors="coerce")
+payroll["timestamp"] = pd.to_datetime(
+    payroll["timestamp"], errors="coerce"
+)
 payroll = payroll.dropna(subset=["timestamp"])
 
 # Rule 5: High-volume salary viewing at night.
@@ -124,7 +137,11 @@ night = payroll[
 
 for actor, group in night.groupby("actor"):
     group = group.sort_values("timestamp")
-    counts = group.set_index("timestamp").resample("1h")["target_employee"].nunique()
+    counts = (
+        group.set_index("timestamp")
+        .resample("1h")["target_employee"]
+        .nunique()
+    )
 
     for time, count in counts[counts >= 10].items():
         add_alert(
@@ -169,13 +186,13 @@ for _, row in salary_changes.iterrows():
 web_pattern = re.compile(
     r"(?P<ip>\S+) \S+ \S+ "
     r"\[(?P<time>[^\]]+)\] "
-    r'"(?P<method>[A-Z]+) (?P<path>\S+) HTTP/[^"]+" '
+   r'"(?P<method>[A-Z]+) (?P<path>.*?) HTTP/[^"]+" '
     r'(?P<status>\d{3}) (?P<size>\S+) '
     r'"(?P<referer>[^"]*)" "(?P<agent>[^"]*)"'
 )
 
 suspicious_patterns = {
-    "SQL injection indicator": r"(?i)(union\s+select|or\s+1=1|sleep\s*\(|information_schema)",
+   "SQL injection indicator": r"(?i)(union\s+select|or\s+1\s*=\s*1|or\s+['\"]?1['\"]?\s*=\s*['\"]?1|;\s*drop\s+table|sleep\s*\(|information_schema)",
     "Script injection indicator": r"(?i)(<script|javascript:|onerror\s*=|onload\s*=)",
     "Path traversal indicator": r"(?i)(\.\./|%2e%2e|/etc/passwd|%2fetc%2f)",
     "Scanning indicator": r"(?i)(sqlmap|nikto|nmap|dirbuster|gobuster)"
@@ -209,6 +226,33 @@ if not web.empty:
                     row["ip"],
                     f"{row['method']} {row['path']} returned HTTP {row['status']}",
                     "Check request context, response, related requests and application logs."
+                )
+
+                    # Rule WEB-02: Repeated failed web login requests.
+    failed_login = web[
+        web["method"].eq("POST")
+        & web["path"].str.split("?", n=1, regex=False).str[0].str.rstrip("/").eq("/login")
+        & web["status"].astype(int).between(400, 499)
+    ].copy()
+
+    if not failed_login.empty:
+        for ip, group in failed_login.groupby("ip"):
+            counts = (
+                group.set_index("timestamp")
+                .sort_index()["status"]
+                .resample("10min")
+                .count()
+            )
+
+            for timestamp, count in counts[counts >= 50].items():
+                add_alert(
+                    "WEB-02 Web login brute force",
+                    timestamp,
+                    "High",
+                    ip,
+                    f"{count} failed POST /login requests in 10 minutes",
+                    "Check source IP, affected accounts, application logs, "
+                    "rate limits and defensive blocking."
                 )
 
 # ---------------- OUTPUT ----------------
