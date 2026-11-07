@@ -1,0 +1,13 @@
+﻿TASK 12 - SECURE CODE REVIEW RESULTS
+
+Bandit:
+Before: 8 findings
+After: 0 findings
+
+Semgrep:
+Before: 12 findings
+After: 0 findings
+
+Note:
+These are static-analysis results for the reviewed code.
+They do not establish complete application security.
