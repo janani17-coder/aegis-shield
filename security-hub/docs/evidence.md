@@ -75,3 +75,28 @@ The public Security Hub is a learning portfolio, not a production security envir
 - [OpenSSF Scorecard](https://scorecard.dev/)
 
 These references provide guidance on documentation publishing and open-source security practices.
+
+## Task 18 - Remediation Sprint
+
+The remediation sprint contains isolated defensive demonstrations and supporting regression evidence.
+
+- R-01: Payroll export authorization - 5/5 tests passed.
+- R-02: Salary-record access - 5/5 tests passed.
+- R-03: Employee-record ownership and delegated access - 10/10 tests passed.
+- R-06: Six authentication-related detection alerts identified in the assessment dataset.
+- R-14: Eight-package dependency review; scoped OSV results reduced from 72 vulnerability records to zero, with `pip check` reporting no broken requirements.
+- Regression checklist: 20 demonstration tests passed.
+
+### Remediation evidence
+
+- [R-01 Payroll Export Evidence](https://github.com/janani17-coder/aegis-shield/blob/main/18_Remediation_Sprint/evidence/after/R01_Payroll_Export_Remediation_Evidence.md)
+- [R-02 Salary Access Evidence](https://github.com/janani17-coder/aegis-shield/blob/main/18_Remediation_Sprint/evidence/after/R02_Salary_Access_Remediation_Evidence.md)
+- [R-03 Employee Record Access Evidence](https://github.com/janani17-coder/aegis-shield/blob/main/18_Remediation_Sprint/evidence/after/R03_Employee_Record_Access_Remediation_Evidence.md)
+- [R-06 Authentication Detection Evidence](https://github.com/janani17-coder/aegis-shield/blob/main/18_Remediation_Sprint/evidence/after/R06_Authentication_Detection_Evidence.md)
+- [R-14 Dependency Remediation Evidence](https://github.com/janani17-coder/aegis-shield/blob/main/18_Remediation_Sprint/evidence/after/R14_Dependency_Remediation_Evidence.md)
+- [Regression Test Checklist](https://github.com/janani17-coder/aegis-shield/blob/main/18_Remediation_Sprint/Regression_Test_Checklist.md)
+
+### Task 18 limitations
+
+These results apply only to isolated demonstrations and the scoped dependency scan. Production integration, MFA and rate-limiting verification, application-level regression, audit-log validation and system-owner approval remain pending. The associated risks are not marked closed.
+

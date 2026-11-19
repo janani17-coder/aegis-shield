@@ -1,3 +1,10 @@
 
 # Task 8 local encryption key
 08_Data_Protection/demo.key
+
+# Task 18 local Python virtual environment
+18_Remediation_Sprint/dependency_review/.venv/
+
+# Task 18 local Python virtual environment and cache files
+18_Remediation_Sprint/dependency_review/.venv/
+__pycache__/

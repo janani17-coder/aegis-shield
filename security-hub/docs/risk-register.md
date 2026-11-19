@@ -57,3 +57,35 @@ See the project repository:
 - Proposed owners and due dates require review and approval.
 - Risk ratings may change when new evidence becomes available.
 - This register is a learning exercise, not a formal organisational risk assessment.
+
+## Task 18 - Remediation Sprint Update
+
+**Overall status: Demonstration and scoped remediation evidence verified; production remediation remains pending.**
+
+| Risk ID | Remediation evidence | Verification | Current status |
+|---|---|---|---|
+| R-01 | Payroll export authorization demonstration | 5/5 tests passed | Production integration pending |
+| R-02 | Salary-record access demonstration | 5/5 tests passed | Production integration pending |
+| R-03 | Employee-record ownership and delegated-access demonstration | 10/10 tests passed | Production integration pending |
+| R-06 | Authentication detection review | 6 authentication-related alerts identified | Rate limiting and MFA not verified |
+| R-14 | Eight-package dependency remediation | OSV results reduced from 72 vulnerability records to 0 in the scoped scan; pip check clean | Application-level validation pending |
+
+### Evidence locations
+
+- R-01: `18_Remediation_Sprint/evidence/after/R01_Payroll_Export_Remediation_Evidence.md`
+- R-02: `18_Remediation_Sprint/evidence/after/R02_Salary_Access_Remediation_Evidence.md`
+- R-03: `18_Remediation_Sprint/evidence/after/R03_Employee_Record_Access_Remediation_Evidence.md`
+- R-06: `18_Remediation_Sprint/evidence/after/R06_Authentication_Detection_Evidence.md`
+- R-14: `18_Remediation_Sprint/evidence/after/R14_Dependency_Remediation_Evidence.md`
+- Regression checklist: `18_Remediation_Sprint/Regression_Test_Checklist.md`
+
+### Remaining validation
+
+1. Integrate authorization demonstrations with trusted production identity, role and approval services.
+2. Verify MFA enforcement and rate limiting through approved configuration and testing.
+3. Run application-level regression and security tests after dependency updates.
+4. Validate audit logging, retention and access protection.
+5. Obtain system-owner review and approval.
+
+**Risk closure rule:** These five risks remain open until the relevant production controls are implemented, independently validated and formally accepted by the responsible risk owners. Passing isolated demonstration tests alone does not close a production risk.
+

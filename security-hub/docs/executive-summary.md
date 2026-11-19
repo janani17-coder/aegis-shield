@@ -40,3 +40,12 @@ Created a risk register containing 17 risks and a compliance mapping covering 14
 The project provides documented evidence of practical cybersecurity learning across assessment, detection, risk management and incident response.
 
 > This is a fictional training project, not a certified security audit or compliance assessment.
+
+### 7. Remediation Sprint (Task 18)
+
+Completed isolated remediation demonstrations for payroll export authorization, salary-record access and employee-record ownership. All 20 associated regression tests passed.
+
+Reviewed authentication detection evidence and updated an isolated eight-package dependency set. The scoped OSV scan reported zero vulnerability records after remediation, and `pip check` reported no broken requirements.
+
+These results are limited to the demonstration environment and scoped package list. Production integration, MFA and rate-limiting verification, application-level testing and system-owner approval remain pending.
+
