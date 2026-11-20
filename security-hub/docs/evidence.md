@@ -100,3 +100,15 @@ The remediation sprint contains isolated defensive demonstrations and supporting
 
 These results apply only to isolated demonstrations and the scoped dependency scan. Production integration, MFA and rate-limiting verification, application-level regression, audit-log validation and system-owner approval remain pending. The associated risks are not marked closed.
 
+
+## Individual Tabletop Walkthrough - Payroll Data Breach
+
+- Exercise type: Individual document-based self-review.
+- Playbook reviewed: AS-15 Payroll Data Breach.
+- Five incident-response decision scenarios reviewed.
+- Response lifecycle, evidence requirements and improvement actions documented.
+- Status: Individual walkthrough completed; formal team tabletop exercise pending.
+
+[View Individual Walkthrough Report](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/evidence/tabletop/Payroll_Data_Breach_Individual_Walkthrough.md)
+
+This walkthrough was completed individually. It does not constitute an independently facilitated team exercise or demonstrate production incident-response effectiveness.
