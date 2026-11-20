@@ -1,4 +1,4 @@
-
+﻿
 # Evidence Index
 
 ## Overview
@@ -12,7 +12,7 @@ All evidence is from a fictional training environment. No real customer or produ
 - Bandit findings: 8 before, 0 after.
 - Semgrep findings: 12 before, 0 after.
 - Gitleaks reported no leaks in the reviewed scan.
-- OSV Scanner identified dependency advisories that remain pending remediation.
+- OSV-Scanner: Task 18 scoped remediation reviewed 8 packages; advisory records reduced from 72 to 0. Full application dependency coverage and production validation remain pending.
 
 [View Task 12 Evidence](https://github.com/janani17-coder/aegis-shield/tree/main/12_Secure_Code_Review/evidence)
 
@@ -112,3 +112,12 @@ These results apply only to isolated demonstrations and the scoped dependency sc
 [View Individual Walkthrough Report](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/evidence/tabletop/Payroll_Data_Breach_Individual_Walkthrough.md)
 
 This walkthrough was completed individually. It does not constitute an independently facilitated team exercise or demonstrate production incident-response effectiveness.
+
+## Phase 3 Assessment Report
+
+The latest Phase 3 assessment report is available below.
+
+- [View Updated Phase 3 Report (PDF)](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/reports/CyberSecurity_Janani_M_Phase3_Report_UPDATED.pdf)
+- [View Phase 3 Report Source (Markdown)](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/reports/Phase_3_Report.md)
+
+**Status:** IN PROGRESS. Independent review, production validation and final approvals remain pending.
