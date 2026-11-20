@@ -13,7 +13,7 @@ The sample is a local training copy. The AWS-like credentials and Flask secret a
 | Bandit | 8 findings | 0 findings | Python security findings |
 | Semgrep OSS | 12 findings | 0 findings | Some baseline rules reported overlapping issues |
 | Gitleaks | No leaks detected | No leaks detected | Did not detect the synthetic sample secrets |
-| OSV-Scanner | Multiple dependency advisories | Not re-scanned | Dependencies were not upgraded |
+| OSV-Scanner | 72 vulnerability records across 37 advisory groups in the scoped baseline | 0 advisory matches across 8 scoped packages | Task 18 remediation; full application dependency coverage remains unverified |
 
 Semgrep scanned 4 Git-tracked files in the final scan using 290 rules.
 Bandit scanned the fixed Python files recursively.
@@ -42,21 +42,27 @@ F-10 is context-dependent and is not automatically a vulnerability.
 
 ## 4. Dependency Review
 
-OSV-Scanner identified multiple advisories affecting the declared packages and resolved dependencies.
+The initial OSV-Scanner baseline identified dependency advisories. A separate scoped remediation review was completed in Task 18.
 
-Packages reviewed:
-- Flask 1.1.2
-- Jinja2 2.11.3
-- Werkzeug 1.0.1
-- PyYAML 5.3.1
-- Requests 2.19.0
+Eight packages were reviewed using Python 3.11.9:
 
-Additional resolved dependencies also had advisories.
+- Flask 3.1.3
+- Jinja2 3.1.6
+- PyYAML 6.0.3
+- requests 2.34.2
+- Werkzeug 3.1.9
+- certifi 2026.10.23
+- urllib3 2.8.0
+- idna 3.20
 
-Recommended action: upgrade to supported, mutually compatible package versions, regenerate the dependency lock information, and run the dependency scan and application tests again.
+Scoped scan comparison:
+- Before: 8 packages, 37 advisory groups, and 72 vulnerability records.
+- After: 8 packages, 0 advisory groups, and 0 vulnerability records.
+- `pip check`: no broken requirements.
+
+These results apply only to the eight scoped packages reviewed in Task 18. They do not establish that every application dependency is free of vulnerabilities. Full application testing and production validation remain pending.
 
 Advisory identifiers can overlap or refer to aliases for the same issue. An advisory does not automatically prove that a vulnerable code path is reachable.
-
 ## 5. Fixed Code
 
 Three weak functions were rewritten as separate review examples:
@@ -72,7 +78,7 @@ The sample application was not deployed or executed. Database migration and envi
 - Bandit identified Python-specific weaknesses such as MD5 usage, hardcoded values, unsafe deserialization, SQL construction, and debug configuration.
 - Semgrep identified unsafe template construction and overlapping SQL injection and deserialization patterns.
 - Gitleaks did not detect the synthetic hardcoded sample values. This demonstrates that a clean secrets scan does not guarantee that source code contains no secrets.
-- OSV-Scanner identified outdated dependencies with published security advisories.
+- OSV-Scanner initially identified dependency advisories. Task 18 later recorded zero advisory matches across the eight scoped remediated packages; full application dependency coverage remains unverified.
 - Manual review identified concerns requiring application context, including salary-record authorization and download path handling.
 
 No single scanner covers every weakness. Manual review and multiple complementary tools are necessary.
@@ -99,4 +105,4 @@ After:
 
 The three selected weak functions were rewritten. Final Bandit and Semgrep scans reported zero findings, and Gitleaks reported no leaks in the fixed-code directory.
 
-The original dependency advisories still require remediation and a fresh scan after package upgrades. The results demonstrate improved static-analysis findings, not proof that the complete payroll application is secure.
+The scoped dependency remediation completed in Task 18 recorded zero OSV advisory matches across eight reviewed packages, with no broken requirements reported by pip check. This result does not establish that every application dependency is free of vulnerabilities. Full application testing and production validation remain pending. The results demonstrate improved static-analysis findings, not proof that the complete payroll application is secure.

@@ -1,14 +1,14 @@
-# Aegis Shield â€“ Phase 3 Review and Report
+﻿# Aegis Shield - Phase 3 Review and Report
 
 **Name:** JANANI M
 **Track:** Cybersecurity
-**Phase:** Phase 3 â€“ Finding, Detecting and Responding
+**Phase:** Phase 3 “ Finding, Detecting and Responding
 **GitHub Repository:** [Aegis Shield](https://github.com/janani17-coder/aegis-shield)
 **Git Tag:** Pending final validation
 
 ## 1. Phase Overview
 
-Phase 3 covered Tasks 11â€“15. The objective was to identify security weaknesses, review and improve insecure code, design tamper-evident audit logging, detect suspicious activity in logs, and prepare incident response procedures.
+Phase 3 covered Tasks 11“15. The objective was to identify security weaknesses, review and improve insecure code, design tamper-evident audit logging, detect suspicious activity in logs, and prepare incident response procedures.
 
 The project used a local training environment, synthetic data, Python-based analysis and documented security procedures.
 
@@ -16,13 +16,13 @@ The project used a local training environment, synthetic data, Python-based anal
 
 | Task | Status | Evidence |
 |---|---|---|
-| 11 â€“ Prove Flaws | Completed with limitations | `11_Prove_Flaws/Task_11_Prove_Flaws_Report.md` and DOM XSS screenshot |
-| 12 â€“ Secure Code Review | Partially complete | `12_Secure_Code_Review/reports/Task_12_Secure_Code_Review_Report.md` and before/after scan results |
-| 13 â€“ Audit Logging | Completed | `13_Audit_Logging/evidence/tamper_demo_output.txt` |
-| 14 â€“ Attack Detection | Completed with limitations | `14_Attack_Detection/reports/detection_alerts.csv` and dashboard |
-| 15 â€“ Incident Response | Partially complete | Three playbooks, tabletop notes and improvement proposals |
+| 11 - Prove Flaws | Completed with limitations | `11_Prove_Flaws/Task_11_Prove_Flaws_Report.md` and DOM XSS screenshot |
+| 12 - Secure Code Review | Partially complete | `12_Secure_Code_Review/reports/Task_12_Secure_Code_Review_Report.md` and before/after scan results |
+| 13 - Audit Logging | Completed | `13_Audit_Logging/evidence/tamper_demo_output.txt` |
+| 14 - Attack Detection | Completed with limitations | `14_Attack_Detection/reports/detection_alerts.csv` and dashboard |
+| 15 - Incident Response | Partially complete | Three playbooks, tabletop notes and improvement proposals |
 
-### Task 11 â€“ Prove Security Flaws
+### Task 11 - Prove Security Flaws
 
 Reviewed SQL injection, DOM-based XSS and broken access-control patterns in the local OWASP Juice Shop training environment. Documented root causes, potential impacts, fixes and regression tests.
 
@@ -30,18 +30,25 @@ Limitations: SQL injection was identified through source review, JavaScript exec
 
 Evidence: `11_Prove_Flaws/evidence/dom-xss-html-rendering.png`.
 
-### Task 12 â€“ Secure Code Review
+### Task 12 - Secure Code Review
 
 Reviewed the sample payroll application using Bandit, Semgrep, Gitleaks, OSV-Scanner and manual source-code review.
 
-- Bandit: 8 findings before, 0 after.
-- Semgrep: 12 findings before, 0 after.
+- Bandit: 8 findings before remediation, 0 after.
+- Semgrep: 12 findings before remediation, 0 after.
 - Gitleaks: no leaks detected in the final fixed-code scan.
-- OSV-Scanner: dependency advisories identified; dependencies still require upgrades and a fresh scan.
+- OSV-Scanner: the initial dependency review identified advisories. A scoped remediation review was subsequently completed under Task 18.
 
 Three selected weak functions were rewritten as secure code examples.
 
-### Task 13 â€“ Audit Logging
+**Task 18 dependency remediation evidence:**
+- 8 scoped packages reviewed.
+- 72 baseline vulnerability records across 37 advisory groups.
+- 0 advisory matches in the after-scan for the scoped packages.
+- `pip check` reported no broken requirements.
+
+**Limitation:** The dependency results apply only to the eight reviewed packages. Full application security validation and production verification remain pending.
+### Task 13 - Audit Logging
 
 Designed a payroll audit logging specification covering event fields, sensitive data handling, retention, access controls and tamper evidence.
 
@@ -49,7 +56,7 @@ Implemented a SHA-256 hash-chain demonstration. The original chain passed verifi
 
 Evidence: `13_Audit_Logging/evidence/tamper_demo_output.txt`.
 
-### Task 14 â€“ Attack Detection
+### Task 14 - Attack Detection
 
 Implemented Python-based detection rules for authentication, payroll and web access logs.
 
@@ -62,15 +69,20 @@ Implemented Python-based detection rules for authentication, payroll and web acc
 
 Detection limitations include missing authoritative administrator-role data, MFA status, payroll approval references and timezone offsets. Alerts require investigation and do not independently prove successful exploitation.
 
-### Task 15 â€“ Incident Response
+### Task 15 — Incident Response
 
-Prepared three playbooks covering payroll data breach, ransomware and insider salary leak scenarios. Each includes detection references, response steps, notification roles, evidence preservation and decision points.
+Prepared three incident response playbooks covering payroll data breach, ransomware and insider salary leak scenarios. Each includes detection references, response steps, notification roles, evidence preservation and decision points.
 
 An AI-assisted tabletop simulation was documented, with five improvement proposals.
 
-**Outstanding:** A real spoken tabletop exercise with a human participant, validation of the proposed improvements and formal approval.
+An individual document-based walkthrough of the Payroll Data Breach Playbook was also completed and documented. Five incident-response decision scenarios and the response lifecycle were reviewed.
 
-## 3. Mini Challenge â€“ Detection to Response in Five Lines
+**Outstanding:** A formal team tabletop exercise with a human participant, independent validation of proposed improvements and formal approval remain pending.
+
+**Evidence:** 15_Incident_Response/evidence/tabletop/Payroll_Data_Breach_Individual_Walkthrough.md`.
+
+This individual walkthrough does not constitute an independently facilitated team exercise or demonstrate production incident-response effectiveness.
+## 3. Mini Challenge - Detection to Response in Five Lines
 
 1. Task 14 identifies a full payroll export and generates a PAY-02 high-severity alert.
 2. The SOC Analyst reviews the alert and preserves the relevant payroll audit evidence.
@@ -96,12 +108,40 @@ I learned how to identify security weaknesses and document their root causes and
 
 ## 6. Plan for the Next Phase
 
-My next steps are to complete the human-led tabletop exercise, validate and approve at least three improvements, address outstanding dependency advisories, regenerate the final Task 14 dashboard, and review all Phase 3 evidence.
+The remaining activities are:
 
-After completing and verifying the remaining requirements, I will create and push the `phase-3` Git tag and export this report with supporting evidence as one PDF.
+1. Complete a formal human-led tabletop exercise with an independent participant.
+2. Validate and obtain approval for at least three improvement actions.
+3. Integrate the R-01, R-02 and R-03 remediation demonstrations with trusted application services.
+4. Verify audit-log protection and retention controls.
+5. Independently verify production rate limiting and MFA enforcement.
+6. Run application-level security and regression tests.
+7. Validate detection thresholds against normal production traffic.
+8. Obtain system-owner approval.
+
+The Task 18 isolated remediation demonstrations and scoped dependency checks are complete. Production deployment and effectiveness have not been verified.
+
+After the outstanding requirements are completed and independently verified, the Phase 3 report will be finalized and the `phase-3` Git tag will be created and pushed.
 
 ## 7. Overall Phase Status
 
-**IN PROGRESS â€“ Documentation and technical evidence prepared; some remediation, human validation and final submission activities remain pending.**
+**IN PROGRESS - Technical demonstrations, remediation evidence and documentation prepared; production validation, independent human review and final approvals remain pending.**
 
-The repository contains the Phase 3 task documentation and evidence. The Git tag and final PDF submission will be completed only after the outstanding requirements are verified.
+### Completed
+- Phase 3 technical documentation and evidence for Tasks 11-15.
+- Task 18 isolated remediation demonstrations: 20 automated tests passed.
+- Scoped dependency remediation: 8 packages reviewed, with zero OSV advisory matches.
+- Individual Payroll Data Breach tabletop walkthrough.
+- Security Hub documentation published on GitHub Pages.
+
+### Pending
+- Formal team tabletop exercise.
+- Independent validation and approval of improvement actions.
+- Production integration and security validation.
+- Audit-log protection and retention verification.
+- MFA and rate-limiting verification.
+- System-owner approval.
+
+**Git tag:** Pending final validation.
+
+The project remains in progress until the outstanding requirements are completed and verified. No production deployment or production security effectiveness is claimed.
