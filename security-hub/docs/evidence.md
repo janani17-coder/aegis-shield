@@ -111,6 +111,10 @@ These results apply only to isolated demonstrations and the scoped dependency sc
 
 [View Individual Walkthrough Report](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/evidence/tabletop/Payroll_Data_Breach_Individual_Walkthrough.md)
 
+[View Planned Facilitator Guide](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/evidence/tabletop/Payroll_Data_Breach_Facilitator_Guide.md)
+
+Facilitator guide status: Prepared - not yet conducted.
+
 This walkthrough was completed individually. It does not constitute an independently facilitated team exercise or demonstrate production incident-response effectiveness.
 
 ## Phase 3 Assessment Report
