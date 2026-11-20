@@ -634,6 +634,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#task-18-remediation-sprint-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 18 - Remediation Sprint Update
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 18 - Remediation Sprint Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evidence-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remaining-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remaining validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -903,6 +942,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#task-18-remediation-sprint-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 18 - Remediation Sprint Update
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task 18 - Remediation Sprint Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evidence-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence locations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remaining-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remaining validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1028,6 +1106,68 @@
 <li>Risk ratings may change when new evidence becomes available.</li>
 <li>This register is a learning exercise, not a formal organisational risk assessment.</li>
 </ul>
+<h2 id="task-18-remediation-sprint-update">Task 18 - Remediation Sprint Update<a class="headerlink" href="#task-18-remediation-sprint-update" title="Permanent link">&para;</a></h2>
+<p><strong>Overall status: Demonstration and scoped remediation evidence verified; production remediation remains pending.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Risk ID</th>
+<th>Remediation evidence</th>
+<th>Verification</th>
+<th>Current status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R-01</td>
+<td>Payroll export authorization demonstration</td>
+<td>5/5 tests passed</td>
+<td>Production integration pending</td>
+</tr>
+<tr>
+<td>R-02</td>
+<td>Salary-record access demonstration</td>
+<td>5/5 tests passed</td>
+<td>Production integration pending</td>
+</tr>
+<tr>
+<td>R-03</td>
+<td>Employee-record ownership and delegated-access demonstration</td>
+<td>10/10 tests passed</td>
+<td>Production integration pending</td>
+</tr>
+<tr>
+<td>R-06</td>
+<td>Authentication detection review</td>
+<td>6 authentication-related alerts identified</td>
+<td>Rate limiting and MFA not verified</td>
+</tr>
+<tr>
+<td>R-14</td>
+<td>Eight-package dependency remediation</td>
+<td>OSV results reduced from 72 vulnerability records to 0 in the scoped scan; pip check clean</td>
+<td>Application-level validation pending</td>
+</tr>
+</tbody>
+</table>
+<h3 id="evidence-locations">Evidence locations<a class="headerlink" href="#evidence-locations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>R-01: <code>18_Remediation_Sprint/evidence/after/R01_Payroll_Export_Remediation_Evidence.md</code></li>
+<li>R-02: <code>18_Remediation_Sprint/evidence/after/R02_Salary_Access_Remediation_Evidence.md</code></li>
+<li>R-03: <code>18_Remediation_Sprint/evidence/after/R03_Employee_Record_Access_Remediation_Evidence.md</code></li>
+<li>R-06: <code>18_Remediation_Sprint/evidence/after/R06_Authentication_Detection_Evidence.md</code></li>
+<li>R-14: <code>18_Remediation_Sprint/evidence/after/R14_Dependency_Remediation_Evidence.md</code></li>
+<li>Regression checklist: <code>18_Remediation_Sprint/Regression_Test_Checklist.md</code></li>
+</ul>
+<h3 id="remaining-validation">Remaining validation<a class="headerlink" href="#remaining-validation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Integrate authorization demonstrations with trusted production identity, role and approval services.</li>
+<li>Verify MFA enforcement and rate limiting through approved configuration and testing.</li>
+<li>Run application-level regression and security tests after dependency updates.</li>
+<li>Validate audit logging, retention and access protection.</li>
+<li>Obtain system-owner review and approval.</li>
+</ol>
+<p><strong>Risk closure rule:</strong> These five risks remain open until the relevant production controls are implemented, independently validated and formally accepted by the responsible risk owners. Passing isolated demonstration tests alone does not close a production risk.</p>
 
 
 
