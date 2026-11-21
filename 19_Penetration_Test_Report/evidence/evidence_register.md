@@ -1,4 +1,4 @@
-# Task 19 – Evidence Register
+ï»¿# Task 19 â€“ Evidence Register
 
 ## Purpose
 This register maps the evidence reviewed for the penetration test report.
@@ -49,7 +49,7 @@ Evidence inventory: Initial review completed.
 Independent human review: Reported completed; written review evidence/sign-off unavailable.
 Production validation: Not performed.
 
-## Technical Validation Review – 21 November 2026
+## Technical Validation Review â€“ 21 November 2026
 
 - Task 11 evidence was reviewed against the available report, notes and screenshot.
 - Task 12 payroll sample source code was inspected directly.
@@ -63,4 +63,10 @@ Production validation: Not performed.
 
 | Evidence ID | Source | Evidence / Observation | Limitation |
 |---|---|---|---|
-| E-14 | Task 12 | `sample/payroll_portal/app.py` source review (lines 2, 4, 6–8, 12, 17, 20, 23, 26, 28) and `requirements.txt` | Static review only; application not executed; runtime exploitability and deployment exposure not established |
+| E-14 | Task 12 | `sample/payroll_portal/app.py` source review (lines 2, 4, 6â€“8, 12, 17, 20, 23, 26, 28) and `requirements.txt` | Static review only; application not executed; runtime exploitability and deployment exposure not established |
+
+## Additional Retest Evidence
+
+| Evidence ID | Source | Evidence / Observation | Limitation |
+|---|---|---|---|
+| E-16 | Task 19 authorized local retest - 21 November 2026 | `E-16_Juice_Shop_Header_Retest.md`; homepage and product-search API both returned `Access-Control-Allow-Origin: *`; CSP, COEP and COOP were not observed on either tested response | Limited to two endpoints and one test session; security impact, credentialed access and broader header coverage remain unverified |

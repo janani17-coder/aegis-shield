@@ -19,10 +19,10 @@
 | PT-11 | Unsafe pickle deserialization – payroll sample | Original app.py uses pickle.loads(request.data); separate secure_import.py example uses JSON parsing but is not integrated or runtime-tested | Review application context and verify safe import handling; deployment, runtime behavior and impact remain unverified | Not eligible yet |
 | PT-12 | Flask debug mode – payroll sample | app.py line 28 confirms app.run(debug=True); deployment and external exposure are unknown | Verify deployment configuration and whether debug mode was exposed; runtime impact remains unverified | Not eligible yet |
 | PT-13 | Listener bound to all interfaces – payroll sample | app.py line 28 specifies host=0.0.0.0; actual deployment and network reachability are unknown | Verify authorized deployment configuration and network exposure; external accessibility and impact remain unverified | Not eligible yet |
-| PT-14 | Wildcard CORS – local Juice Shop | E-15 records wildcard CORS on the tested homepage and product-search API; OPTIONS preflight returned HTTP 204 | Assess endpoint sensitivity and browser access controls; credentialed access, sensitive-data exposure and exploitability remain unverified | Not eligible yet |
-| PT-15 | Missing Content Security Policy – local Juice Shop | E-15 records CSP absent from the tested local responses; scanner observation documented | Confirm header coverage across relevant endpoints and assess security impact; exploitability remains unverified | Not eligible yet |
-| PT-16 | Missing Cross-Origin-Embedder-Policy – local Juice Shop | E-15 records COEP absent from the tested local responses; scanner observation documented | Confirm header coverage and assess whether cross-origin isolation is required; security impact remains unverified | Not eligible yet |
-| PT-17 | Missing Cross-Origin-Opener-Policy – local Juice Shop | E-15 records COOP absent from the tested local responses; scanner observation documented | Confirm header coverage and assess application requirements; security impact remains unverified | Not eligible yet |
+| PT-14 | Wildcard CORS – local Juice Shop | E-15 records wildcard CORS and HTTP 204 preflight; E-16 retest reconfirmed wildcard CORS on the homepage and product-search API | Assess endpoint sensitivity and browser access controls; credentialed access, sensitive-data exposure and exploitability remain unverified | Not eligible yet |
+| PT-15 | Missing Content Security Policy – local Juice Shop | E-15 records CSP absence; E-16 retest found CSP absent on the homepage and product-search API | Confirm header coverage across relevant endpoints and assess security impact; exploitability remains unverified | Not eligible yet |
+| PT-16 | Missing Cross-Origin-Embedder-Policy – local Juice Shop | E-15 records COEP absence; E-16 retest found COEP absent on the homepage and product-search API | Confirm header coverage and assess whether cross-origin isolation is required; security impact remains unverified | Not eligible yet |
+| PT-17 | Missing Cross-Origin-Opener-Policy – local Juice Shop | E-15 records COOP absence; E-16 retest found COOP absent on the homepage and product-search API | Confirm header coverage and assess application requirements; security impact remains unverified | Not eligible yet |
 
 ## Validation rules
 
@@ -41,6 +41,7 @@
 - [ ] Obtain at least 12 defensible CVSS v3.1 scores if supported by the evidence.
 - [ ] Update the findings register and main report.
 - [ ] Complete retesting and independent review.
+
 
 
 
