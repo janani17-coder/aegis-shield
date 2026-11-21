@@ -48,3 +48,39 @@ Track improvements identified during the AI-assisted tabletop simulation.
 - [ ] Findings validated in a real spoken tabletop exercise.
 - [ ] Approved improvements incorporated into playbooks.
 - [ ] Changes reviewed and verified.
+
+## Approval and Verification Register
+
+**Purpose:** Record independent review and formal approval of the five proposed improvements.
+
+**Current status:** All approvals pending. No improvement is represented as approved or implemented.
+
+| ID | Improvement | Reviewer name and role | Review date | Decision | Evidence reference | Status |
+|---|---|---|---|---|---|---|
+| IMP-01 | Containment approval authority | Pending | Pending | Pending | Pending | Proposed |
+| IMP-02 | Payroll audit logging | Pending | Pending | Pending | Pending | Proposed |
+| IMP-03 | Notification approval matrix | Pending | Pending | Pending | Pending | Proposed |
+| IMP-04 | Payroll export authorization | Pending | Pending | Pending | Pending | Proposed |
+| IMP-05 | Evidence register | Pending | Pending | Pending | Pending | Proposed |
+
+### Approval Requirements
+
+1. Each improvement must be reviewed by an appropriate authorized person.
+2. Record the reviewer's actual name, role and review date.
+3. Record the decision as Approved, Rejected or Requires Revision.
+4. Link supporting evidence for each decision.
+5. Record implementation only after the approved change is completed.
+6. Verify completed changes before marking them Verified.
+
+### Final Verification
+
+- [ ] Five proposals independently reviewed.
+- [ ] Improvement decisions documented.
+- [ ] Authorized approvals recorded.
+- [ ] Approved changes implemented.
+- [ ] Implementation evidence reviewed.
+- [ ] Final verification completed.
+
+**Current approval status:** PENDING.
+
+**Note:** This register is a tracking template. It does not represent completed independent review or approval.
