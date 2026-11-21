@@ -1,4 +1,4 @@
-﻿# Task 19 – Penetration Test Report
+# Task 19 – Penetration Test Report
 
 **Project:** Aegis Shield  
 **Assessment environment:** Local cybersecurity lab and supplied sample source code  
@@ -122,7 +122,7 @@ The findings register contains 17 candidate observations. The following table su
 
 **PT-01 – SQL query construction**
 
-- Asset: Juice Shop source code, `routes/login.ts`.
+- Asset: Juice Shop login functionality; original source file was unavailable for direct review.
 - Evidence: E-03.
 - Observation: User-supplied login input is incorporated into SQL query construction.
 - Validation limitation: Runtime SQL injection was not demonstrated.
@@ -386,3 +386,11 @@ Detailed command and execution evidence should be retained with the correspondin
 ---
 
 **Final assessment status:** Draft prepared. Independent review, application-level retesting, full CVSS scoring where evidence permits, and production integration validation remain outstanding.
+
+### 10.5 Additional source evidence
+
+| Evidence ID | Description |
+|---|---|
+| E-14 | Direct static review of Task 12 payroll sample `app.py` and `requirements.txt`; source-line mapping for PT-04 through PT-13 is recorded in the findings register. |
+
+E-14 confirms the presence of the documented source-code patterns only. It does not establish runtime exploitability, active credentials, network exposure or production impact.

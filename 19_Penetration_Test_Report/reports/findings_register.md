@@ -70,3 +70,20 @@ The three remediation examples were reviewed as separate code examples. They hav
 
 No CVSS v3.1 scores are assigned during this review because the available evidence does not establish all required vulnerability and impact assumptions. Additional validation and independent review are pending.
 
+
+## E-14 Source-Line Mapping
+
+| Finding ID | Source location | Evidence reference |
+|---|---|---|
+| PT-04 | app.py, line 4 | E-14 |
+| PT-05 | app.py, lines 6–7 | E-14 |
+| PT-06 | app.py, line 8 | E-14 |
+| PT-07 | app.py, line 12 | E-14 |
+| PT-08 | app.py, lines 15–17 | E-14 |
+| PT-09 | app.py, line 20 | E-14 |
+| PT-10 | app.py, line 23 | E-14 |
+| PT-11 | app.py, line 26 | E-14 |
+| PT-12 | app.py, line 28 (debug configuration) | E-14 |
+| PT-13 | app.py, line 28 (network binding) | E-14 |
+
+Note: These references establish source-code observations only. They do not establish runtime exploitability or deployment exposure.

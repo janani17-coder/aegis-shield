@@ -55,3 +55,9 @@ Production validation: Not performed.
 - No CVSS v3.1 scores are assigned at this stage.
 - Independent evidence review and application-level retesting remain pending.
 
+
+## Additional Source Evidence
+
+| Evidence ID | Source | Evidence / Observation | Limitation |
+|---|---|---|---|
+| E-14 | Task 12 | `sample/payroll_portal/app.py` source review (lines 2, 4, 6–8, 12, 17, 20, 23, 26, 28) and `requirements.txt` | Static review only; application not executed; runtime exploitability and deployment exposure not established |
