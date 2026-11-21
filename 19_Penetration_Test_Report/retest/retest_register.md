@@ -1,4 +1,4 @@
-ï»¿# Task 19 â€“ Retest Register
+# Task 19 – Retest Register
 
 ## 1. Purpose
 
@@ -9,9 +9,9 @@ and outstanding application-level validation.
 
 | Retest ID | Related Finding / Area | Before State | Remediation Evidence | Test Result | Task 19 Status |
 |---|---|---|---|---|---|
-| RT-01 | Task 12 F-04 â€“ SQL construction | Unsafe SQL string interpolation identified | secure_login.py uses parameterized SQL and password-hash verification | Code example reviewed; no application runtime test | Demonstration reviewed; application retest pending |
-| RT-02 | Task 12 F-06 â€“ Search rendering | User input concatenated into HTML template | secure_search.py uses separate template rendering | Code example reviewed; no application runtime test | Demonstration reviewed; application retest pending |
-| RT-03 | Task 12 F-08 â€“ Deserialization | pickle.loads used on request data | secure_import.py uses JSON parsing and basic type validation | Code example reviewed; no application runtime test | Demonstration reviewed; application retest pending |
+| RT-01 | Task 12 F-04 – SQL construction | Unsafe SQL string interpolation identified | secure_login.py uses parameterized SQL and password-hash verification | Code example reviewed; no application runtime test | Demonstration reviewed; application retest pending |
+| RT-02 | Task 12 F-06 – Search rendering | User input concatenated into HTML template | secure_search.py uses separate template rendering | Code example reviewed; no application runtime test | Demonstration reviewed; application retest pending |
+| RT-03 | Task 12 F-08 – Deserialization | pickle.loads used on request data | secure_import.py uses JSON parsing and basic type validation | Code example reviewed; no application runtime test | Demonstration reviewed; application retest pending |
 | RT-04 | Task 12 F-05 / salary authorization | Salary route did not visibly enforce ownership | Task 18 R-02 isolated authorization demonstration | 5 passed, 0 failed | Demonstration verified; original application retest pending |
 | RT-05 | Employee record ownership | Complete ownership checks not visible | Task 18 R-03 isolated authorization demonstration | 10 passed, 0 failed | Demonstration verified; original application retest pending |
 | RT-06 | Payroll export authorization | Complete export approval workflow not visible | Task 18 R-01 isolated authorization demonstration | 5 passed, 0 failed | Demonstration verified; production integration pending |
@@ -39,7 +39,7 @@ and outstanding application-level validation.
 The isolated remediation demonstrations passed their documented tests.
 Application-level and production retesting remain pending.
 
-## 6. Technical Validation Update â€“ 21 November 2026
+## 6. Technical Validation Update – 21 November 2026
 
 - The Task 12 payroll source patterns were inspected directly.
 - Three secure-code examples remain separate from the original application.
@@ -50,7 +50,7 @@ Application-level and production retesting remain pending.
 - CVSS v3.1 scoring remains pending technical validation.
 
 
-## 7. Current-Environment Validation â€“ OWASP Juice Shop â€“ 21 November 2026
+## 7. Current-Environment Validation – OWASP Juice Shop – 21 November 2026
 
 ### Environment
 
@@ -62,7 +62,7 @@ Application-level and production retesting remain pending.
 - Local URL: `http://127.0.0.1:3000`
 - Original Task 11 application version: Not recorded; equivalence with the current image is unverified.
 
-### PT-02 â€“ Harmless HTML Rendering Observation
+### PT-02 – Harmless HTML Rendering Observation
 
 - Original evidence: `11_Prove_Flaws/evidence/dom-xss-html-rendering.png`
 - Original notes record that `<b>janani-test</b>` was rendered as bold text.
@@ -76,3 +76,21 @@ Application-level and production retesting remain pending.
 ### Limitations
 
 This validation applies only to the current local Juice Shop 20.3.0 image. The original Task 11 version was not recorded, so this result cannot establish equivalence with the original test environment or confirm a remediation regression. PT-01 runtime validation and PT-03 cross-user authorization validation remain outstanding.
+
+### PT-01 and PT-03 – Task 11 Evidence Review – 21 November 2026
+
+**PT-01 – SQL Injection**
+- Original Task 11 notes identify SQL string interpolation in routes/login.ts using the supplied email value.
+- Evidence is source-code observation only; runtime SQL injection proof is explicitly pending.
+- Original application source and version equivalence with the current Juice Shop 20.3.0 image are unavailable.
+- Result: Not runtime-validated; exploitability and impact not established.
+
+**PT-03 – Broken Access Control**
+- Original notes record an authenticated user's own-basket baseline request to /rest/basket/6, returning HTTP 304.
+- Reviewed retrieveBasket() logic obtains a basket using the requested ID; ownership enforcement was not visible in the reviewed function.
+- Other middleware or route-level authorization controls were not ruled out.
+- Cross-user access was not tested. No other user's basket or data was accessed.
+- Result: Potential authorization concern only; runtime vulnerability not confirmed.
+
+**Validation limitation:** These original Task 11 observations do not establish behavior in the current Juice Shop 20.3.0 image. Original-version equivalence remains unverified.
+
