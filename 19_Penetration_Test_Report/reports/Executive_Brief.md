@@ -1,6 +1,6 @@
-ï»¿# Aegis Shield â€“ Penetration Test Executive Brief
+# Aegis Shield – Penetration Test Executive Brief
 
-**Assessment period:** Octoberâ€“November 2026  
+**Assessment period:** October–November 2026  
 **Environment:** Authorized local cybersecurity lab and supplied sample source code  
 **Status:** Draft - further validation pending; independent human review reported completed, written review evidence unavailable
 
@@ -14,7 +14,7 @@ The assessment covered local OWASP Juice Shop and DVWA labs, selected source cod
 - Weak MD5 password hashing in the payroll sample.
 - Unsafe deserialization using pickle.
 - Authorization and employee-ownership controls that were not fully verified.
-- Wildcard CORS and missing CSP, COEP and COOP headers were reconfirmed on the Juice Shop homepage and product-search API on 21 November 2026 (E-16). Sensitive-data exposure and exploitability were not demonstrated.
+- Wildcard CORS and missing CSP, COEP and COOP headers were observed on the Juice Shop homepage and product-search API using GET, and on three additional public routes using HEAD on 21 November 2026 (E-16, E-17). Sensitive-data exposure and exploitability were not demonstrated.
 
 These are candidate observations, not 17 confirmed exploitable vulnerabilities. Runtime impact remains unverified for several findings.
 
@@ -52,5 +52,6 @@ These are candidate observations, not 17 confirmed exploitable vulnerabilities. 
 The assessment recorded 17 candidate observations. These are not 17 confirmed exploitable vulnerabilities. Several observations are based on source-code patterns or scanner alerts, and runtime impact has not been established.
 
 No CVSS v3.1 scores or vectors are currently assigned. Technical validation is required before defensible scores can be reported. The original payroll sample was not deployed, and the separate remediation examples have not been integrated into it.
+
 
 
