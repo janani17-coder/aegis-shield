@@ -1,4 +1,4 @@
-
+﻿
 site_name: Aegis Security Hub
 site_description: Cybersecurity Assessment and Evidence Portfolio
 site_author: Cybersecurity Learning Project
@@ -25,9 +25,14 @@ nav:
   - Detection & Monitoring: detections.md
   - Incident Response: incident-response.md
   - Evidence Index: evidence.md
+  - Staff Awareness Guide: awareness-guide.md
+  - Awareness Knowledge Check: awareness-quiz.md
+  - Go-Live Recommendation: go-live-recommendation.md
 
 markdown_extensions:
   - tables
   - admonition
   - toc:
       permalink: true
+
+
