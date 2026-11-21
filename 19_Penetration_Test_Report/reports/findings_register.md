@@ -48,16 +48,16 @@ Reviewed the available Task 11 notes and report, Task 12 payroll sample source c
 | PT-01 | SQL interpolation documented in Task 11 notes | Original Juice Shop source unavailable; runtime validation not performed | Not scored |
 | PT-02 | Unsafe HTML rendering documented; HTML interpretation screenshot exists | Original source unavailable; JavaScript execution not demonstrated | Not scored |
 | PT-03 | Potential basket ownership gap documented | Cross-user access not tested; original source unavailable | Not scored |
-| PT-04 | Hardcoded Flask session secret confirmed in sample app.py line 4 | Sample app not deployed or executed | Pending |
-| PT-05 | Synthetic AWS-like values confirmed in sample app.py lines 6â€“7 | Active credentials not established | Not scored |
-| PT-06 | MD5 password hashing confirmed in sample app.py line 8 | Runtime and password database exposure not tested; separate replacement example reviewed | Pending |
-| PT-07 | SQL string interpolation confirmed in sample app.py line 12 | Runtime injection not tested; separate parameterized example reviewed | Pending |
-| PT-08 | Salary route lacks visible authentication or ownership check in lines 15â€“17 | Other controls not tested; isolated remediation is not integrated | Pending |
-| PT-09 | User input concatenated into render_template_string in line 20 | Runtime behavior not tested; separate template example reviewed | Pending |
-| PT-10 | User-controlled filename appended to download path in line 23 | Path validation and filesystem controls not tested | Pending |
-| PT-11 | pickle.loads applied to request data in line 26 | Runtime behavior not tested; separate JSON example reviewed | Pending |
-| PT-12 | Flask debug=True confirmed in line 28 | Exposure and deployment configuration unknown | Pending |
-| PT-13 | host="0.0.0.0" confirmed in line 28 | Network reachability and deployment context unknown | Not scored |
+| PT-04 | Hardcoded Flask session secret confirmed in sample app.py line 4 | Sample app not deployed; secret reuse or production exposure not established | Not scored |
+| PT-05 | Synthetic AWS-like example values confirmed in sample app.py lines 6–7 | Active credentials not established; not treated as a confirmed credential leak | Not scored |
+| PT-06 | MD5 password hashing confirmed in sample app.py line 8; separate example uses check_password_hash | Hash generation, password migration, integration and runtime retest not verified | Not scored |
+| PT-07 | SQL string interpolation confirmed in sample app.py line 12; separate example uses parameterized SQL | Replacement not integrated; runtime injection and application retest not performed | Not scored |
+| PT-08 | Salary route lacks visible authentication or ownership check in lines 15–17 | No secure salary-route replacement found; other controls and runtime access not tested | Not scored |
+| PT-09 | User input concatenated into render_template_string in line 20; separate example uses render_template and a Jinja variable with default auto-escaping | Template source reviewed; integration and runtime retest not performed | Not scored |
+| PT-10 | User-controlled filename appended to download path in line 23 | No secure download replacement found; filesystem controls and runtime access not tested | Not scored |
+| PT-11 | pickle.loads applied to request data in line 26; separate example uses JSON parsing and validates top-level data type | Replacement not integrated; runtime retest not performed | Not scored |
+| PT-12 | Flask debug=True confirmed in line 28 | No secure startup configuration found; deployment exposure unknown | Not scored |
+| PT-13 | host="0.0.0.0" confirmed in line 28 | Network reachability and deployment context unknown; no secure replacement found | Not scored |
 | PT-14 | Wildcard CORS scanner observation | Sensitive-data exposure not established | Not scored |
 | PT-15 | Missing CSP scanner observation | Exploit and impact not established | Not scored |
 | PT-16 | Missing or invalid COEP scanner observation | Security impact not established | Not scored |
