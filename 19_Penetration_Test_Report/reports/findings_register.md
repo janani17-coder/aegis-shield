@@ -90,3 +90,5 @@ Note: These references establish source-code observations only. They do not esta
 
 
 
+
+| PT-18 | Payroll dependency manifest | Outdated dependencies with known vulnerability advisories | E-20 | 68 reported advisory records across 7 packages; duplicate records may exist; remediation and compatibility testing pending | Not scored |

@@ -66,3 +66,11 @@
 
 - [x] Independent human review reported completed – Mothilal Nehru, 21 November 2026 (E-18). Written sign-off pending.
 - [x] Nontechnical reader review reported completed – 21 November 2026 (E-19). Written feedback pending.
+
+## PT-18 – Dependency audit
+
+- Evidence: E-20 (pip-audit output).
+- Result: 68 reported vulnerability records across 7 packages in the payroll dependency manifest.
+- Limitation: Duplicate advisory records may exist; the count is not a unique-vulnerability count.
+- Pending: Review advisories, upgrade affected dependencies, test compatibility and rerun the audit.
+- CVSS: Not assigned; applicability and impact require assessment.
