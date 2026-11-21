@@ -1,9 +1,9 @@
-﻿# Task 19 � Penetration Test Report
+# Task 19 ? Penetration Test Report
 
 **Project:** Aegis Shield  
 **Assessment environment:** Local cybersecurity lab and supplied sample source code  
-**Assessment period:** October�November 2026  
-**Report status:** Documentation prepared � independent human review reported completed; written review evidence unavailable; additional validation outstanding
+**Assessment period:** October?November 2026  
+**Report status:** Documentation prepared ? independent human review reported completed; written review evidence unavailable; additional validation outstanding
 **Assessment type:** Lab-based security assessment
 
 ---
@@ -100,27 +100,27 @@ The findings register contains 17 candidate observations. The following table su
 
 | ID | Finding | Current evidence status | CVSS status |
 |---|---|---|---|
-| PT-01 | SQL query constructed using untrusted input � Juice Shop | Source pattern identified; runtime validation pending | Not scored |
-| PT-02 | Unsafe HTML rendering in search results � Juice Shop | HTML interpretation observed; script execution not demonstrated | Not scored |
-| PT-03 | Basket ownership check not visible � Juice Shop | Potential issue; cross-user access not tested | Not scored |
-| PT-04 | Hardcoded Flask session secret � payroll sample | Code pattern confirmed; application not deployed | Not scored |
-| PT-05 | Synthetic AWS-like credentials � payroll sample | Example values; active status not verified | Not scored |
-| PT-06 | MD5 password hashing � payroll sample | Code pattern confirmed; runtime and database exposure unknown | Not scored |
-| PT-07 | SQL query string interpolation � payroll sample | Code pattern confirmed; runtime injection not tested | Not scored |
-| PT-08 | Salary route lacks visible ownership check � payroll sample | Isolated remediation passed; original application not retested | Not scored |
-| PT-09 | User input concatenated into HTML template � payroll sample | Code pattern confirmed; runtime behaviour not tested | Not scored |
-| PT-10 | User-controlled filename appended to download path � payroll sample | Code pattern confirmed; path controls not fully reviewed | Not scored |
-| PT-11 | Unsafe pickle deserialization � payroll sample | Code pattern confirmed; runtime behaviour not tested | Not scored |
-| PT-12 | Flask debug mode enabled � payroll sample | Configuration confirmed in sample; exposure unknown | Not scored |
-| PT-13 | Listener bound to all network interfaces � payroll sample | Configuration confirmed; network exposure unknown | Not scored |
-| PT-14 | Wildcard CORS response header � Juice Shop | Scanner evidence; sensitive-data exposure not established | Not scored |
-| PT-15 | Content Security Policy header missing � Juice Shop | Scanner observation; exploit not demonstrated | Not scored |
-| PT-16 | COEP header missing or invalid � Juice Shop | Scanner observation; impact not demonstrated | Not scored |
-| PT-17 | COOP header missing or invalid � Juice Shop | Scanner observation; impact not demonstrated | Not scored |
+| PT-01 | SQL query constructed using untrusted input ? Juice Shop | Source pattern identified; runtime validation pending | Not scored |
+| PT-02 | Unsafe HTML rendering in search results ? Juice Shop | HTML interpretation observed; script execution not demonstrated | Not scored |
+| PT-03 | Basket ownership check not visible ? Juice Shop | Potential issue; cross-user access not tested | Not scored |
+| PT-04 | Hardcoded Flask session secret ? payroll sample | Code pattern confirmed; application not deployed | Not scored |
+| PT-05 | Synthetic AWS-like credentials ? payroll sample | Example values; active status not verified | Not scored |
+| PT-06 | MD5 password hashing ? payroll sample | Code pattern confirmed; runtime and database exposure unknown | Not scored |
+| PT-07 | SQL query string interpolation ? payroll sample | Code pattern confirmed; runtime injection not tested | Not scored |
+| PT-08 | Salary route lacks visible ownership check ? payroll sample | Isolated remediation passed; original application not retested | Not scored |
+| PT-09 | User input concatenated into HTML template ? payroll sample | Code pattern confirmed; runtime behaviour not tested | Not scored |
+| PT-10 | User-controlled filename appended to download path ? payroll sample | Code pattern confirmed; path controls not fully reviewed | Not scored |
+| PT-11 | Unsafe pickle deserialization ? payroll sample | Code pattern confirmed; runtime behaviour not tested | Not scored |
+| PT-12 | Flask debug mode enabled ? payroll sample | Configuration confirmed in sample; exposure unknown | Not scored |
+| PT-13 | Listener bound to all network interfaces ? payroll sample | Configuration confirmed; network exposure unknown | Not scored |
+| PT-14 | Wildcard CORS response header ? Juice Shop | Scanner evidence; sensitive-data exposure not established | Not scored |
+| PT-15 | Content Security Policy header missing ? Juice Shop | Scanner observation; exploit not demonstrated | Not scored |
+| PT-16 | COEP header missing or invalid ? Juice Shop | Scanner observation; impact not demonstrated | Not scored |
+| PT-17 | COOP header missing or invalid ? Juice Shop | Scanner observation; impact not demonstrated | Not scored |
 
 ### 5.1 Detailed finding evidence and recommended actions
 
-**PT-01 � SQL query construction**
+**PT-01 ? SQL query construction**
 
 - Asset: Juice Shop login functionality; original source file was unavailable for direct review.
 - Evidence: E-03.
@@ -130,7 +130,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Use parameterized queries or safe ORM query methods.
 - Retest: Runtime application validation remains pending.
 
-**PT-02 � Unsafe HTML rendering**
+**PT-02 ? Unsafe HTML rendering**
 
 - Asset: Juice Shop search results.
 - Evidence: E-04.
@@ -140,7 +140,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Render untrusted values as text and avoid bypassing the framework's HTML sanitization.
 - Retest: HTML interpretation was observed; security behaviour after a verified application-level fix remains pending.
 
-**PT-03 � Basket ownership check**
+**PT-03 ? Basket ownership check**
 
 - Asset: Juice Shop basket retrieval function.
 - Evidence: E-05.
@@ -150,7 +150,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Enforce server-side identity and ownership checks for every basket request.
 - Retest: Pending.
 
-**PT-04 � Hardcoded Flask session secret**
+**PT-04 ? Hardcoded Flask session secret**
 
 - Asset: Supplied payroll sample, `app.py`.
 - Evidence: E-06.
@@ -159,7 +159,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Load a strong secret from protected configuration or a secrets manager.
 - Retest: Secure example reviewed; original application integration not tested.
 
-**PT-05 � Synthetic AWS-like credentials**
+**PT-05 ? Synthetic AWS-like credentials**
 
 - Asset: Supplied payroll sample, `app.py`.
 - Evidence: E-06.
@@ -169,7 +169,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Never commit real credentials; use managed secret storage and rotate credentials if they are genuine and exposed.
 - Retest: Not applicable to the synthetic values.
 
-**PT-06 � MD5 password hashing**
+**PT-06 ? MD5 password hashing**
 
 - Asset: Supplied payroll sample, `app.py`.
 - Evidence: E-06.
@@ -178,7 +178,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Use a password hashing function designed for passwords, such as Argon2id, scrypt or an appropriately configured PBKDF2 implementation.
 - Retest: Secure login example reviewed; original application and stored password migration were not tested.
 
-**PT-07 � SQL query interpolation**
+**PT-07 ? SQL query interpolation**
 
 - Asset: Supplied payroll sample, login function.
 - Evidence: E-06.
@@ -188,7 +188,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Use parameterized SQL queries.
 - Retest: A separate secure login example was reviewed; original application runtime validation remains pending.
 
-**PT-08 � Salary route authorization**
+**PT-08 ? Salary route authorization**
 
 - Asset: Supplied payroll sample, salary route.
 - Evidence: E-06 and E-11.
@@ -198,7 +198,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Enforce authentication, role authorization and employee ownership on the server.
 - Retest: Isolated R02 demonstration recorded 5 passing tests and 0 failures. The original application was not retested.
 
-**PT-09 � Unsafe template construction**
+**PT-09 ? Unsafe template construction**
 
 - Asset: Supplied payroll sample, search route.
 - Evidence: E-06 and E-07.
@@ -207,7 +207,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Use normal template rendering with automatic escaping and avoid building HTML from untrusted input.
 - Retest: A separate secure search example was reviewed; runtime application validation remains pending.
 
-**PT-10 � Download path construction**
+**PT-10 ? Download path construction**
 
 - Asset: Supplied payroll sample, download route.
 - Evidence: E-06.
@@ -217,7 +217,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Restrict downloads to an allowlist of known files and validate resolved paths against an approved directory.
 - Retest: Pending.
 
-**PT-11 � Unsafe deserialization**
+**PT-11 ? Unsafe deserialization**
 
 - Asset: Supplied payroll sample, import route.
 - Evidence: E-06 and E-07.
@@ -226,7 +226,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Use a data-only format such as JSON, validate its structure and reject unexpected values.
 - Retest: A separate JSON-based example was reviewed; original application runtime validation remains pending.
 
-**PT-12 � Flask debug mode**
+**PT-12 ? Flask debug mode**
 
 - Asset: Supplied payroll sample.
 - Evidence: E-06.
@@ -236,7 +236,7 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Disable debug mode in deployed environments and use controlled logging.
 - Retest: Pending.
 
-**PT-13 � Listener bound to all interfaces**
+**PT-13 ? Listener bound to all interfaces**
 
 - Asset: Supplied payroll sample.
 - Evidence: E-06.
@@ -246,40 +246,40 @@ The findings register contains 17 candidate observations. The following table su
 - Recommendation: Bind only to required interfaces and enforce appropriate network restrictions.
 - Retest: Pending.
 
-**PT-14 � Wildcard CORS response header**
+**PT-14 ? Wildcard CORS response header**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01, E-16.
+- Evidence: E-01, E-16, E-17.
 - Observation: ZAP reported wildcard CORS; the 21 November 2026 retest reconfirmed Access-Control-Allow-Origin: * on the homepage and product-search API.
 - Validation limitation: Sensitive authenticated data exposure was not demonstrated; listed examples included public resources.
 - Business impact: Depends on the data and endpoints exposed by the policy.
 - Recommendation: Restrict cross-origin access to trusted origins where required.
 - Retest: Pending.
 
-**PT-15 � Missing Content Security Policy**
+**PT-15 ? Missing Content Security Policy**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01, E-16.
+- Evidence: E-01, E-16, E-17.
 - Observation: ZAP reported missing CSP; the 21 November 2026 retest found no CSP header on the homepage and product-search API.
 - Validation limitation: No exploit was demonstrated.
 - Business impact: A suitable CSP can provide an additional browser-side security layer.
 - Recommendation: Define and test a policy appropriate to the application's resources.
 - Retest: Pending.
 
-**PT-16 � COEP header missing or invalid**
+**PT-16 ? COEP header missing or invalid**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01, E-16.
+- Evidence: E-01, E-16, E-17.
 - Observation: ZAP reported missing or invalid COEP; the 21 November 2026 retest found no COEP header on the homepage and product-search API.
 - Validation limitation: No security impact was demonstrated.
 - Business impact: Depends on the application's cross-origin isolation requirements.
 - Recommendation: Review whether cross-origin isolation is required and configure the header accordingly.
 - Retest: Pending.
 
-**PT-17 � COOP header missing or invalid**
+**PT-17 ? COOP header missing or invalid**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01, E-16.
+- Evidence: E-01, E-16, E-17.
 - Observation: ZAP reported missing or invalid COOP; the 21 November 2026 retest found no COOP header on the homepage and product-search API.
 - Validation limitation: No security impact was demonstrated.
 - Business impact: Depends on the application's window and cross-origin isolation requirements.
@@ -361,6 +361,7 @@ No independent nontechnical review is claimed as completed.
 | E-12 | Task 18 employee record authorization demonstration |
 | E-13 | Task 18 scoped dependency remediation evidence |
 | E-16 | 21 November 2026 Juice Shop homepage and product-search API security-header retest |
+| E-17 | 21 November 2026 additional Juice Shop public-route security-header review using HEAD requests |
 
 The detailed evidence register is maintained separately at `19_Penetration_Test_Report/evidence/evidence_register.md`.
 
@@ -381,7 +382,7 @@ Detailed command and execution evidence should be retained with the correspondin
 
 ### 10.4 References
 
-- FIRST � Common Vulnerability Scoring System (CVSS) v3.1: https://www.first.org/cvss/v3.1/
+- FIRST ? Common Vulnerability Scoring System (CVSS) v3.1: https://www.first.org/cvss/v3.1/
 - OWASP Web Security Testing Guide: https://owasp.org/www-project-web-security-testing-guide/
 - OWASP ZAP documentation: https://www.zaproxy.org/docs/
 
@@ -396,6 +397,7 @@ Detailed command and execution evidence should be retained with the correspondin
 | E-14 | Direct static review of Task 12 payroll sample `app.py` and `requirements.txt`; source-line mapping for PT-04 through PT-13 is recorded in the findings register. |
 
 E-14 confirms the presence of the documented source-code patterns only. It does not establish runtime exploitability, active credentials, network exposure or production impact.
+
 
 
 
