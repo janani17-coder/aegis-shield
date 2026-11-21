@@ -49,3 +49,30 @@ Application-level and production retesting remain pending.
 - The 17 Task 19 observations remain candidates; successful exploitation has not been established.
 - CVSS v3.1 scoring remains pending technical validation.
 
+
+## 7. Current-Environment Validation – OWASP Juice Shop – 21 November 2026
+
+### Environment
+
+- Application: OWASP Juice Shop
+- Version: 20.3.0 (verified from installed package metadata)
+- Docker image: `bkimminich/juice-shop:latest`
+- Image revision label: `e39a3bd`
+- Image ID: `sha256:42843723a7bf4246aa5d63c324978b17ef296ac78434aeddd34c427bfb5853f4`
+- Local URL: `http://127.0.0.1:3000`
+- Original Task 11 application version: Not recorded; equivalence with the current image is unverified.
+
+### PT-02 – Harmless HTML Rendering Observation
+
+- Original evidence: `11_Prove_Flaws/evidence/dom-xss-html-rendering.png`
+- Original notes record that `<b>janani-test</b>` was rendered as bold text.
+- Current retest: The same harmless HTML-like search input was rendered as bold text in the current local Juice Shop 20.3.0 environment.
+- Search API availability check: HTTP 200.
+- Result: HTML interpretation reproduced in the current environment.
+- JavaScript execution: Not tested.
+- Security impact: Not established.
+- Assessment: Reproduced HTML-rendering observation; do not treat as proof of script execution or confirmed exploitation.
+
+### Limitations
+
+This validation applies only to the current local Juice Shop 20.3.0 image. The original Task 11 version was not recorded, so this result cannot establish equivalence with the original test environment or confirm a remediation regression. PT-01 runtime validation and PT-03 cross-user authorization validation remain outstanding.
