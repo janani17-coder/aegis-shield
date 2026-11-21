@@ -8,3 +8,10 @@
 # Task 18 local Python virtual environment and cache files
 18_Remediation_Sprint/dependency_review/.venv/
 __pycache__/
+
+# Local backup and preview files - keep out of Git
+12_Secure_Code_Review/reports/Task_12_Secure_Code_Review_Report_BACKUP.md
+14_Attack_Detection/detect_attacks_backup.py
+15_Incident_Response/reports/Phase_3_Report_preview.html
+15_Incident_Response/tabletop/Improvements_BACKUP.md
+19_Penetration_Test_Report/reports/findings_register_PRE_REVIEW_BACKUP.md
