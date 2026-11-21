@@ -38,3 +38,14 @@ and outstanding application-level validation.
 
 The isolated remediation demonstrations passed their documented tests.
 Application-level and production retesting remain pending.
+
+## 6. Technical Validation Update – 21 November 2026
+
+- The Task 12 payroll source patterns were inspected directly.
+- Three secure-code examples remain separate from the original application.
+- The 20 passing authorization tests apply only to isolated demonstrations.
+- No original payroll application runtime retest has been completed.
+- No production integration or production validation is claimed.
+- The 17 Task 19 observations remain candidates; successful exploitation has not been established.
+- CVSS v3.1 scoring remains pending technical validation.
+

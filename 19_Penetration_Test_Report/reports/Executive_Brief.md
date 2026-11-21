@@ -46,3 +46,10 @@ These are candidate observations, not 17 confirmed exploitable vulnerabilities. 
 7. Use Task 20 to communicate secure coding, least privilege, password protection and incident reporting.
 
 **Overall conclusion:** The assessment identified important areas for improvement and documented remediation progress. The available evidence does not establish that the original application or a production environment is secure. Further integration, validation and review are necessary.
+
+## Assessment status and limitations
+
+The assessment recorded 17 candidate observations. These are not 17 confirmed exploitable vulnerabilities. Several observations are based on source-code patterns or scanner alerts, and runtime impact has not been established.
+
+No CVSS v3.1 scores or vectors are currently assigned. Technical validation is required before defensible scores can be reported. The original payroll sample was not deployed, and the separate remediation examples have not been integrated into it.
+
