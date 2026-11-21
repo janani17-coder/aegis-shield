@@ -414,3 +414,26 @@ A pip-audit scan of the payroll sample requirements.txt reported 68 vulnerabilit
 The findings register contains 18 candidate observations (PT-01 to PT-18). PT-18 records the dependency audit result in E-20. These observations are not all confirmed exploitable vulnerabilities; validation and remediation remain outstanding.
 
 
+
+## 10.6 Final report readiness and validation status
+
+### Completed documentation
+- All 18 candidate findings (PT-01 to PT-18) have received documentation-level review.
+- Evidence register updated through E-21.
+- E-20 records 68 reported dependency advisory records, representing 36 unique package-advisory combinations across 7 packages.
+- E-21 records the globally installed Python environment and its clean `pip check` result. This does not establish remediation of the payroll manifest.
+- Independent human review and nontechnical reader review were reported as completed on 21 November 2026 (E-18 and E-19).
+
+### Outstanding requirements
+- Authorized application-level validation and retesting.
+- Production integration validation of remediation examples.
+- Applicability and impact assessment for candidate findings.
+- At least 12 defensible CVSS v3.1 scores, if supported by verified evidence.
+- Written independent reviewer sign-off and nontechnical feedback.
+- Dependency compatibility testing and follow-up audit.
+- Final review and approval.
+
+### Final conclusion
+**Report status: IN PROGRESS – NOT YET APPROVED.**
+
+This report consolidates the available assessment evidence and identifies its limitations. The 18 entries are candidate findings, not all confirmed exploitable vulnerabilities. No unsupported CVSS scores have been assigned. The report must not be treated as evidence that all application tests, remediation activities or assignment requirements are complete.

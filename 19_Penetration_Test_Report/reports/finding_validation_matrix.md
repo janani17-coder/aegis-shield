@@ -76,3 +76,26 @@
 - CVSS: Not assigned; applicability and impact require assessment.
 
 
+
+## PT-18 – Additional environment evidence
+
+- Evidence: E-21 (installed Python environment inventory).
+- Result: Installed Flask 3.1.3, Jinja2 3.1.6, Werkzeug 3.1.8, PyYAML 6.0.3, Requests 2.33.1, urllib3 2.6.3 and idna 3.11.
+- Dependency check: `python -m pip check` returned "No broken requirements found."
+- Limitation: This is the global Python environment, not a verified installation of the payroll application's pinned manifest. It does not demonstrate remediation of E-20.
+
+## Final report readiness and outstanding actions
+
+- [x] Documentation-level review of all 18 candidate findings.
+- [x] Evidence register updated through E-21.
+- [x] E-20 dependency audit result documented, including 36 unique package-advisory combinations.
+- [x] E-21 installed-environment check documented.
+- [x] Independent human review reported completed (E-18); written sign-off remains outstanding.
+- [x] Nontechnical reader review reported completed (E-19); written feedback remains outstanding.
+- [ ] Complete appropriate authorized application-level validation and retesting.
+- [ ] Assess finding applicability and assign CVSS v3.1 scores only where evidence supports them.
+- [ ] Obtain written reviewer sign-off and nontechnical feedback.
+- [ ] Complete dependency compatibility testing and follow-up audit.
+- [ ] Complete final report approval.
+
+**Overall status: IN PROGRESS.** The report documents the evidence collected and its limitations. It is not a declaration that all candidate findings are confirmed vulnerabilities or that all remediation and validation requirements are complete.
