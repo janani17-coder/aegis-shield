@@ -1,4 +1,4 @@
-ï»¿# Task 19 â€“ Evidence Register
+# Task 19 – Evidence Register
 
 ## Purpose
 This register maps the evidence reviewed for the penetration test report.
@@ -46,21 +46,21 @@ as proof of exploitation unless the documented test supports that conclusion.
 ## Review Status
 
 Evidence inventory: Initial review completed.
-Independent evidence review: Pending.
+Independent human review: Reported completed; written review evidence/sign-off unavailable.
 Production validation: Not performed.
 
-## Technical Validation Review â€“ 21 November 2026
+## Technical Validation Review – 21 November 2026
 
 - Task 11 evidence was reviewed against the available report, notes and screenshot.
 - Task 12 payroll sample source code was inspected directly.
 - Three separate remediation examples were reviewed but were not integrated into the original application.
 - Scanner observations remain distinct from confirmed vulnerabilities.
 - No CVSS v3.1 scores are assigned at this stage.
-- Independent evidence review and application-level retesting remain pending.
+- Independent human review was reported completed; written review evidence/sign-off was unavailable for inspection. Application-level retesting remains pending.
 
 
 ## Additional Source Evidence
 
 | Evidence ID | Source | Evidence / Observation | Limitation |
 |---|---|---|---|
-| E-14 | Task 12 | `sample/payroll_portal/app.py` source review (lines 2, 4, 6â€“8, 12, 17, 20, 23, 26, 28) and `requirements.txt` | Static review only; application not executed; runtime exploitability and deployment exposure not established |
+| E-14 | Task 12 | `sample/payroll_portal/app.py` source review (lines 2, 4, 6–8, 12, 17, 20, 23, 26, 28) and `requirements.txt` | Static review only; application not executed; runtime exploitability and deployment exposure not established |
