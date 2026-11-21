@@ -12,7 +12,7 @@
 
 This assessment reviewed a local OWASP Juice Shop and DVWA lab, selected source code from a sample payroll application, security scanner results, and isolated remediation demonstrations.
 
-The assessment identified 17 candidate observations across the reviewed material. These include source-code security concerns, observed HTML rendering behaviour, and configuration alerts from OWASP ZAP. They must not all be interpreted as confirmed exploitable vulnerabilities.
+The assessment identified 18 candidate observations across the reviewed material. These include source-code security concerns, observed HTML rendering behaviour, and configuration alerts from OWASP ZAP. They must not all be interpreted as confirmed exploitable vulnerabilities.
 
 The most important areas requiring attention are unsafe handling of user input, SQL query construction, password storage, unsafe deserialization, and missing or unverified authorization controls.
 
@@ -96,7 +96,7 @@ The assignment requirement for at least 12 scored findings remains outstanding. 
 
 ## 5. Findings Overview
 
-The findings register contains 17 candidate observations. The following table summarizes their current evidence status.
+The findings register contains 18 candidate observations. The following table summarizes their current evidence status.
 
 | ID | Finding | Current evidence status | CVSS status |
 |---|---|---|---|
@@ -388,7 +388,7 @@ Detailed command and execution evidence should be retained with the correspondin
 
 ---
 
-**Final assessment status:** Documentation prepared; assessment completion is pending authorized application-level retesting, production integration validation, and defensible CVSS v3.1 scoring for at least 12 findings as required by the assignment. The current 17 observations remain candidates; the required 12 scored findings have not been established. Independent human review was reported as completed; written review evidence is unavailable.
+**Final assessment status:** Documentation prepared; assessment completion is pending authorized application-level retesting, production integration validation, and defensible CVSS v3.1 scoring for at least 12 findings as required by the assignment. The current 18 observations remain candidates; the required 12 scored findings have not been established. Independent human review was reported as completed; written review evidence is unavailable.
 
 ### 10.5 Additional source evidence
 
@@ -412,3 +412,4 @@ A pip-audit scan of the payroll sample requirements.txt reported 68 vulnerabilit
 ## Updated findings count
 
 The findings register contains 18 candidate observations (PT-01 to PT-18). PT-18 records the dependency audit result in E-20. These observations are not all confirmed exploitable vulnerabilities; validation and remediation remain outstanding.
+

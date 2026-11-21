@@ -20,6 +20,8 @@
 | PT-16 | Task 10 – Juice Shop | Cross-Origin-Embedder-Policy header missing or invalid | E-01, E-16, E-17 | COEP not observed on five tested public endpoints; impact not demonstrated | Not scored |
 | PT-17 | Task 10 – Juice Shop | Cross-Origin-Opener-Policy header missing or invalid | E-01, E-16, E-17 | COOP not observed on five tested public endpoints; impact not demonstrated | Not scored |
 
+| PT-18 | Payroll dependency manifest | Outdated dependencies with known vulnerability advisories | E-20 | 68 reported advisory records across 7 packages; duplicate records may exist; remediation and compatibility testing pending | Not scored |
+
 ## Scoring Rules
 
 1. Use CVSS v3.1 base metrics and include the complete vector for every finding that can be defensibly scored.
@@ -30,7 +32,7 @@
 
 ## Current Status
 
-Candidate observations recorded: 17 (including 4 Task 10 scanner observations).
+Candidate observations recorded: 18 (including 4 Task 10 scanner observations).
 Confirmed exploited vulnerabilities: Not established.
 CVSS scoring: No scores assigned; technical validation required before scoring.
 
@@ -91,4 +93,4 @@ Note: These references establish source-code observations only. They do not esta
 
 
 
-| PT-18 | Payroll dependency manifest | Outdated dependencies with known vulnerability advisories | E-20 | 68 reported advisory records across 7 packages; duplicate records may exist; remediation and compatibility testing pending | Not scored |
+

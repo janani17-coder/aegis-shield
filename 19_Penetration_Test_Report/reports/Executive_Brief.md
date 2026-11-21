@@ -49,7 +49,7 @@ These are candidate observations, not 17 confirmed exploitable vulnerabilities. 
 
 ## Assessment status and limitations
 
-The assessment recorded 17 candidate observations. These are not 17 confirmed exploitable vulnerabilities. Several observations are based on source-code patterns or scanner alerts, and runtime impact has not been established.
+The assessment recorded 18 candidate observations. These are not 17 confirmed exploitable vulnerabilities. Several observations are based on source-code patterns or scanner alerts, and runtime impact has not been established.
 
 No CVSS v3.1 scores or vectors are currently assigned. Technical validation is required before defensible scores can be reported. The original payroll sample was not deployed, and the separate remediation examples have not been integrated into it.
 
@@ -61,3 +61,4 @@ No CVSS v3.1 scores or vectors are currently assigned. Technical validation is r
 A 22 November 2026 pip-audit scan of the payroll sample manifest reported 68 vulnerability records across 7 packages, including direct and transitive dependencies (E-20). This is not necessarily 68 unique vulnerabilities. Dependency upgrades, compatibility testing and a follow-up audit remain outstanding.
 
 The findings register now contains 18 candidate observations, including PT-18 for outdated payroll dependencies. These are candidate findings, not 18 confirmed exploitable vulnerabilities.
+

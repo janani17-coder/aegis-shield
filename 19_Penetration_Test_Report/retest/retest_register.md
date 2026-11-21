@@ -46,7 +46,7 @@ Application-level and production retesting remain pending.
 - The 20 passing authorization tests apply only to isolated demonstrations.
 - No original payroll application runtime retest has been completed.
 - No production integration or production validation is claimed.
-- The 17 Task 19 observations remain candidates; successful exploitation has not been established.
+- The 18 Task 19 observations remain candidates; successful exploitation has not been established.
 - CVSS v3.1 scoring remains pending technical validation.
 
 
@@ -93,4 +93,13 @@ This validation applies only to the current local Juice Shop 20.3.0 image. The o
 - Result: Potential authorization concern only; runtime vulnerability not confirmed.
 
 **Validation limitation:** These original Task 11 observations do not establish behavior in the current Juice Shop 20.3.0 image. Original-version equivalence remains unverified.
+
+
+## 8. Current Dependency Audit – 22 November 2026
+
+- Evidence: E-20 (19_Penetration_Test_Report/evidence/E-20_Dependency_Audit.txt).
+- Scope: payroll portal requirements manifest.
+- Result: 68 reported advisory records across 7 packages; duplicate advisory records may exist.
+- Remediation: dependency upgrades, compatibility testing and a follow-up audit remain pending.
+- The earlier RT-07 eight-package scoped review is a separate historical result and does not supersede E-20.
 
