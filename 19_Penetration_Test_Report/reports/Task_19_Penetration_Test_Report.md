@@ -3,7 +3,7 @@
 **Project:** Aegis Shield  
 **Assessment environment:** Local cybersecurity lab and supplied sample source code  
 **Assessment period:** October–November 2026  
-**Report status:** Draft – independent review and additional validation pending  
+**Report status:** Documentation prepared � independent review and additional validation outstanding
 **Assessment type:** Lab-based security assessment
 
 ---
@@ -385,7 +385,7 @@ Detailed command and execution evidence should be retained with the correspondin
 
 ---
 
-**Final assessment status:** Draft prepared. Independent review, application-level retesting, full CVSS scoring where evidence permits, and production integration validation remain outstanding.
+**Final assessment status:** Documentation prepared; assessment completion is pending independent review, authorized application-level retesting, defensible CVSS scoring, and production integration validation.
 
 ### 10.5 Additional source evidence
 
