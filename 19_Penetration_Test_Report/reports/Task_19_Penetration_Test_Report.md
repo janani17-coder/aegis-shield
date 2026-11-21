@@ -249,8 +249,8 @@ The findings register contains 17 candidate observations. The following table su
 **PT-14 – Wildcard CORS response header**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01.
-- Observation: ZAP reported an `Access-Control-Allow-Origin: *` response.
+- Evidence: E-01, E-16.
+- Observation: ZAP reported wildcard CORS; the 21 November 2026 retest reconfirmed Access-Control-Allow-Origin: * on the homepage and product-search API.
 - Validation limitation: Sensitive authenticated data exposure was not demonstrated; listed examples included public resources.
 - Business impact: Depends on the data and endpoints exposed by the policy.
 - Recommendation: Restrict cross-origin access to trusted origins where required.
@@ -259,8 +259,8 @@ The findings register contains 17 candidate observations. The following table su
 **PT-15 – Missing Content Security Policy**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01.
-- Observation: ZAP reported missing CSP headers on selected URLs.
+- Evidence: E-01, E-16.
+- Observation: ZAP reported missing CSP; the 21 November 2026 retest found no CSP header on the homepage and product-search API.
 - Validation limitation: No exploit was demonstrated.
 - Business impact: A suitable CSP can provide an additional browser-side security layer.
 - Recommendation: Define and test a policy appropriate to the application's resources.
@@ -269,8 +269,8 @@ The findings register contains 17 candidate observations. The following table su
 **PT-16 – COEP header missing or invalid**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01.
-- Observation: ZAP reported a missing or invalid Cross-Origin-Embedder-Policy header.
+- Evidence: E-01, E-16.
+- Observation: ZAP reported missing or invalid COEP; the 21 November 2026 retest found no COEP header on the homepage and product-search API.
 - Validation limitation: No security impact was demonstrated.
 - Business impact: Depends on the application's cross-origin isolation requirements.
 - Recommendation: Review whether cross-origin isolation is required and configure the header accordingly.
@@ -279,8 +279,8 @@ The findings register contains 17 candidate observations. The following table su
 **PT-17 – COOP header missing or invalid**
 
 - Asset: Juice Shop local lab.
-- Evidence: E-01.
-- Observation: ZAP reported a missing or invalid Cross-Origin-Opener-Policy header.
+- Evidence: E-01, E-16.
+- Observation: ZAP reported missing or invalid COOP; the 21 November 2026 retest found no COOP header on the homepage and product-search API.
 - Validation limitation: No security impact was demonstrated.
 - Business impact: Depends on the application's window and cross-origin isolation requirements.
 - Recommendation: Review application requirements and configure an appropriate policy.
@@ -359,6 +359,7 @@ No independent nontechnical review is claimed as completed.
 | E-11 | Task 18 salary authorization demonstration |
 | E-12 | Task 18 employee record authorization demonstration |
 | E-13 | Task 18 scoped dependency remediation evidence |
+| E-16 | 21 November 2026 Juice Shop homepage and product-search API security-header retest |
 
 The detailed evidence register is maintained separately at `19_Penetration_Test_Report/evidence/evidence_register.md`.
 
@@ -394,3 +395,7 @@ Detailed command and execution evidence should be retained with the correspondin
 | E-14 | Direct static review of Task 12 payroll sample `app.py` and `requirements.txt`; source-line mapping for PT-04 through PT-13 is recorded in the findings register. |
 
 E-14 confirms the presence of the documented source-code patterns only. It does not establish runtime exploitability, active credentials, network exposure or production impact.
+
+
+
+
