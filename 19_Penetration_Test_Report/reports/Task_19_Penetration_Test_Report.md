@@ -408,3 +408,7 @@ E-14 confirms the presence of the documented source-code patterns only. It does 
 ## E-20 – Dependency audit (22 November 2026)
 
 A pip-audit scan of the payroll sample requirements.txt reported 68 vulnerability records across 7 packages: Flask, Jinja2, Werkzeug, PyYAML, Requests, idna and urllib3. The output is preserved in evidence E-20. The reported count may include duplicate advisory records and must not be interpreted as 68 unique vulnerabilities. Dependency upgrades, compatibility testing and a follow-up audit remain pending. The audit covers the supplied payroll dependency manifest only, not every possible project or runtime dependency.
+
+## Updated findings count
+
+The findings register contains 18 candidate observations (PT-01 to PT-18). PT-18 records the dependency audit result in E-20. These observations are not all confirmed exploitable vulnerabilities; validation and remediation remain outstanding.
