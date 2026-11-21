@@ -125,3 +125,7 @@ The latest Phase 3 assessment report is available below.
 - [View Phase 3 Report Source (Markdown)](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/reports/Phase_3_Report.md)
 
 **Status:** IN PROGRESS. Independent review, production validation and final approvals remain pending.
+
+[View Improvement Approval and Verification Register](https://github.com/janani17-coder/aegis-shield/blob/main/15_Incident_Response/tabletop/Improvements.md)
+
+Approval register status: Prepared - independent review and approval pending.
