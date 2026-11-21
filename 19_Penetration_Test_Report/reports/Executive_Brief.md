@@ -62,3 +62,4 @@ A 22 November 2026 pip-audit scan of the payroll sample manifest reported 68 vul
 
 The findings register now contains 18 candidate observations, including PT-18 for outdated payroll dependencies. These are candidate findings, not 18 confirmed exploitable vulnerabilities.
 
+

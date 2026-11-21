@@ -1,6 +1,6 @@
 # Task 19 – Finding Validation Matrix
 
-**Purpose:** Track the evidence and validation required for candidate findings PT-01 to PT-17.
+**Purpose:** Track the evidence and validation required for candidate findings PT-01 to PT-18.
 **Status:** Partially updated – source review and limited local header retesting documented; application-level validation, scoring and sign-off remain incomplete.
 **Rule:** Do not assign CVSS v3.1 scores without sufficient verified evidence.
 
@@ -35,7 +35,7 @@
 
 ## Completion tracking
 
-- [x] Review all 17 candidate findings at the evidence and documentation level.
+- [x] Review all 18 candidate findings at the evidence and documentation level.
 - [ ] Complete appropriate authorized validation.
 - [ ] Identify findings with sufficient evidence for CVSS scoring.
 - [ ] Obtain at least 12 defensible CVSS v3.1 scores if supported by the evidence.
@@ -70,7 +70,9 @@
 ## PT-18 – Dependency audit
 
 - Evidence: E-20 (pip-audit output).
-- Result: 68 reported vulnerability records across 7 packages in the payroll dependency manifest.
+- Result: 68 reported vulnerability records representing 36 unique package-advisory combinations across 7 packages in the payroll dependency manifest.
 - Limitation: Duplicate advisory records may exist; the count is not a unique-vulnerability count.
 - Pending: Review advisories, upgrade affected dependencies, test compatibility and rerun the audit.
 - CVSS: Not assigned; applicability and impact require assessment.
+
+
