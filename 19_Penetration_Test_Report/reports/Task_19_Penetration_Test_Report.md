@@ -385,7 +385,7 @@ Detailed command and execution evidence should be retained with the correspondin
 
 ---
 
-**Final assessment status:** Documentation prepared; assessment completion is pending authorized application-level retesting, defensible CVSS scoring, and production integration validation. Independent human review was reported as completed; written review evidence is unavailable.
+**Final assessment status:** Documentation prepared; assessment completion is pending authorized application-level retesting, production integration validation, and defensible CVSS v3.1 scoring for at least 12 findings as required by the assignment. The current 17 observations remain candidates; the required 12 scored findings have not been established. Independent human review was reported as completed; written review evidence is unavailable.
 
 ### 10.5 Additional source evidence
 
