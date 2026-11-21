@@ -23,6 +23,9 @@ as proof of exploitation unless the documented test supports that conclusion.
 | E-12 | Task 18 | R03_Employee_Record_Access_Remediation_Evidence.md | Isolated demonstration; original application not retested |
 | E-13 | Task 18 | R14_Dependency_Remediation_Evidence.md and OSV comparison | Limited to eight scoped packages |
 
+
+| E-15 | Task 19 local lab | Juice Shop homepage and product-search API returned wildcard CORS; OPTIONS preflight returned HTTP 204 with allowed methods. CSP, COEP and COOP were absent from the tested responses. | Limited to the tested local endpoints; sensitive-data exposure, credentialed cross-origin access and exploitability not demonstrated |
+
 ## Original Evidence Locations
 
 - `10_Automated_Scanning_and_Triage/`
