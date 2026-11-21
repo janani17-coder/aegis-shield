@@ -61,3 +61,8 @@
 
 
 
+
+## Review completion update
+
+- [x] Independent human review reported completed – Mothilal Nehru, 21 November 2026 (E-18). Written sign-off pending.
+- [x] Nontechnical reader review reported completed – 21 November 2026 (E-19). Written feedback pending.
