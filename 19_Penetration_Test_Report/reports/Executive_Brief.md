@@ -58,8 +58,9 @@ No CVSS v3.1 scores or vectors are currently assigned. Technical validation is r
 
 ## Additional dependency audit result
 
-A 22 November 2026 pip-audit scan of the payroll sample manifest reported 68 vulnerability records across 7 packages, including direct and transitive dependencies (E-20). This is not necessarily 68 unique vulnerabilities. Dependency upgrades, compatibility testing and a follow-up audit remain outstanding.
+A 22 November 2026 pip-audit scan of the payroll sample manifest reported 68 vulnerability records across 7 packages, representing 36 unique package-advisory combinations (E-20). Dependency upgrades, compatibility testing and a follow-up audit remain outstanding. E-21 records the globally installed Python package versions and a clean pip check; this is not a verified installation of the payroll manifest and does not demonstrate remediation.
 
 The findings register now contains 18 candidate observations, including PT-18 for outdated payroll dependencies. These are candidate findings, not 18 confirmed exploitable vulnerabilities.
+
 
 

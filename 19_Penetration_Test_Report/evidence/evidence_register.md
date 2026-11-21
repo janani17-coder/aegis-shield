@@ -80,3 +80,5 @@ Production validation: Not performed.
 | E-19 | 21 November 2026 nontechnical reader review record | nontechnical_reader_review_record.md; review reported completed | Reviewer name and written feedback not documented |
 
 | E-20 | 22 November 2026 dependency audit | E-20_Dependency_Audit.txt; pip-audit against payroll_portal requirements.txt; 68 reported vulnerability records across 7 packages | Findings require dependency upgrades and compatibility retesting |
+| E-20 | Task 19 | E-20_Dependency_Audit.txt – 68 reported advisory records across 7 packages, representing 36 unique package-advisory combinations | Manifest-level audit; applicability and runtime impact require further validation |
+| E-21 | Task 19 | E-21_Installed_Environment_Check.md – installed package versions and clean pip check | Global environment only; does not verify or remediate the payroll manifest |
