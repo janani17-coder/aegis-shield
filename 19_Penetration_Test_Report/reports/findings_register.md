@@ -15,6 +15,10 @@
 | PT-11 | Task 12 – Payroll sample | Unsafe pickle deserialization | E-06, E-07 | Code pattern confirmed; runtime behavior not tested | Not scored |
 | PT-12 | Task 12 – Payroll sample | Flask debug mode enabled | E-06 | Configuration confirmed in sample; exposure unknown | Not scored |
 | PT-13 | Task 12 – Payroll sample | Listener bound to all network interfaces | E-06 | Configuration confirmed; network exposure unknown | Not scored |
+| PT-14 | Task 10 – Juice Shop | Wildcard CORS response header | E-01 | Scanner observation; sensitive-data exposure not established | Not scored |
+| PT-15 | Task 10 – Juice Shop | Content Security Policy header missing | E-01 | Scanner observation; exploit not demonstrated | Not scored |
+| PT-16 | Task 10 – Juice Shop | Cross-Origin-Embedder-Policy header missing or invalid | E-01 | Scanner observation; impact not demonstrated | Not scored |
+| PT-17 | Task 10 – Juice Shop | Cross-Origin-Opener-Policy header missing or invalid | E-01 | Scanner observation; impact not demonstrated | Not scored |
 
 ## Scoring Rules
 
@@ -30,10 +34,6 @@ Candidate observations recorded: 17 (including 4 Task 10 scanner observations).
 Confirmed exploited vulnerabilities: Not established.
 CVSS scoring: No scores assigned; technical validation required before scoring.
 
-| PT-14 | Task 10 – Juice Shop | Wildcard CORS response header | E-01 | Scanner evidence; sensitive-data exposure not established | Not scored |
-| PT-15 | Task 10 – Juice Shop | Content Security Policy header missing | E-01 | Scanner observation; exploit not demonstrated | Not scored |
-| PT-16 | Task 10 – Juice Shop | Cross-Origin-Embedder-Policy header missing or invalid | E-01 | Scanner observation; impact not demonstrated | Not scored |
-| PT-17 | Task 10 – Juice Shop | Cross-Origin-Opener-Policy header missing or invalid | E-01 | Scanner observation; impact not demonstrated | Not scored |
 
 
 ## Technical Validation Review â€“ 21 November 2026
@@ -59,9 +59,9 @@ Reviewed the available Task 11 notes and report, Task 12 payroll sample source c
 | PT-12 | Flask debug=True confirmed in line 28 | No secure startup configuration found; deployment exposure unknown | Not scored |
 | PT-13 | host="0.0.0.0" confirmed in line 28 | Network reachability and deployment context unknown; no secure replacement found | Not scored |
 | PT-14 | Wildcard CORS scanner observation | Sensitive-data exposure not established | Not scored |
-| PT-15 | Missing CSP scanner observation | Exploit and impact not established | Not scored |
-| PT-16 | Missing or invalid COEP scanner observation | Security impact not established | Not scored |
-| PT-17 | Missing or invalid COOP scanner observation | Security impact not established | Not scored |
+| PT-15 | Missing CSP header | Exploit not demonstrated | Not scored |
+| PT-16 | Missing or invalid COEP header | Security impact not established | Not scored |
+| PT-17 | Missing or invalid COOP header | Security impact not established | Not scored |
 
 ### Review Conclusion
 The available evidence confirms several insecure source-code patterns in the supplied training sample. It does not establish that the sample application was deployed, externally reachable, or successfully exploited.
