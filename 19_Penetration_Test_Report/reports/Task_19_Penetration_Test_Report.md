@@ -323,7 +323,7 @@ The assessment also recorded the following positive results:
 6. Review browser security headers against actual application requirements.
 7. Complete full dependency inventory and scanning.
 8. Conduct authorized application-level retesting after integration.
-9. Obtain independent technical review and approval.
+9. Document the reported independent human review and obtain written reviewer sign-off.
 10. Use Task 20 to communicate secure input handling, password protection, least privilege, approval controls, secret handling and incident reporting.
 
 ## 9. Nontechnical Reader Review
