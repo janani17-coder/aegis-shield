@@ -12,7 +12,7 @@ as proof of exploitation unless the documented test supports that conclusion.
 | E-01 | Task 10 | OWASP ZAP baseline report and seven alert categories | Scanner alerts require manual validation |
 | E-02 | Task 10 | Nmap scan of local lab ports 3000 and 8081 | Open ports alone do not establish vulnerabilities |
 | E-03 | Task 11 | SQL query construction documented in Task 11 notes and report | Original Juice Shop source unavailable in the repository; runtime SQL injection not demonstrated |
-| E-04 | Task 11 | dom-xss-html-rendering.png | HTML interpretation observed; JavaScript execution not demonstrated |
+| E-04 | Task 11 | 11_Prove_Flaws/evidence/dom-xss-html-rendering.png | HTML interpretation observed; JavaScript execution not demonstrated |
 | E-05 | Task 11 | Basket retrieval source review | Cross-user access not tested; other controls not fully reviewed |
 | E-06 | Task 12 | Task_12_Secure_Code_Review_Report.md and scan evidence | Sample application not deployed or executed |
 | E-07 | Task 12 | secure_login.py, secure_search.py, secure_import.py | Rewritten examples; application integration and runtime retest pending |
@@ -54,3 +54,4 @@ Production validation: Not performed.
 - Scanner observations remain distinct from confirmed vulnerabilities.
 - No CVSS v3.1 scores are assigned at this stage.
 - Independent evidence review and application-level retesting remain pending.
+

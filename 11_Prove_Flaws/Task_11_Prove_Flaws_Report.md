@@ -1,4 +1,4 @@
-# Task 11 – Prove Security Flaws
+﻿# Task 11 â€“ Prove Security Flaws
 
 ## 1. Objective
 
@@ -11,7 +11,7 @@ Investigate one injection issue, one cross-site scripting (XSS) issue, and one b
 - Application URL: `http://127.0.0.1:3000`
 - Testing scope: Own lab account and local application source code
 
-## 3. Finding 1 – SQL Injection
+## 3. Finding 1 â€“ SQL Injection
 
 **Challenge:** Login Admin
 
@@ -29,7 +29,7 @@ Investigate one injection issue, one cross-site scripting (XSS) issue, and one b
 
 **Evidence status:** Source-code pattern identified. Runtime SQL injection was not demonstrated.
 
-## 4. Finding 2 – DOM-Based Cross-Site Scripting
+## 4. Finding 2 â€“ DOM-Based Cross-Site Scripting
 
 **Challenge:** DOM XSS
 
@@ -49,7 +49,7 @@ Investigate one injection issue, one cross-site scripting (XSS) issue, and one b
 
 **Evidence status:** HTML interpretation demonstrated with a screenshot. JavaScript execution was not demonstrated.
 
-## 5. Finding 3 – Broken Access Control
+## 5. Finding 3 â€“ Broken Access Control
 
 **Challenge:** View Basket
 
@@ -88,9 +88,9 @@ Evidence and notes are stored under:
 - `fix-notes/injection-notes.md`
 - `fix-notes/xss-notes.md`
 - `fix-notes/access-control-notes.md`
-- `evidence/xss/dom-xss-html-rendering.png`
+- `evidence/dom-xss-html-rendering.png`
 
-## 7. Payroll Application – Remediation Priority
+## 7. Payroll Application â€“ Remediation Priority
 
 1. **SQL Injection:** Prioritise investigation and remediation because an unsafe database query may put sensitive payroll records at risk.
 2. **Broken Access Control:** Verify ownership enforcement and remediate any missing server-side checks because employee records must only be accessible to authorised users.
@@ -109,3 +109,4 @@ All three issues should be addressed promptly. Final priority should be based on
 ## 9. Conclusion
 
 Task 11 identified three security patterns for further investigation. Source-code review revealed unsafe SQL query construction, unsafe HTML rendering, and a potentially missing basket ownership check. Evidence and recommended fixes were documented while avoiding unsupported claims of successful exploitation.
+
